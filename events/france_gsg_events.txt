@@ -103,24 +103,41 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_regency = no
+		BRI = { exists = yes }
 		OR = {
-			is_female = no
 			AND = {
 				OR = {
-					has_ruler = "Anne I"
-					has_ruler = "Anne de Beaujeu"
+					is_female = no
+					AND = {
+						OR = {
+							has_ruler = "Anne I"
+							has_ruler = "Anne de Beaujeu"
+						}
+						has_female_heir = no
+					}
 				}
-				has_female_heir = no
+				BRI = {
+					is_lesser_in_union = no
+					is_subject = no
+					is_female = yes
+				}
 			}
-		}
-		BRI = { exists = yes }
-		BRI = {
-			is_lesser_in_union = no
-			is_subject = no
-			is_female = yes
+			AND = {
+				is_female = yes
+				NOT = { has_ruler_modifier = regency_council }
+				BRI = {
+					is_lesser_in_union = no
+					is_subject = no
+					is_female = no
+				}
+			}			
 		}
 		NOT = { is_year = 1550 }
 		NOT = { has_country_flag = had_fflavor_4 }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
 	}
 	
 	immediate = { set_country_flag = had_fflavor_4 }
@@ -144,6 +161,7 @@ country_event = {
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
+		tag = FRA
 		OR = {
 			ORL = { 
 				vassal_of = FRA
@@ -156,6 +174,10 @@ country_event = {
 		is_year = 1488
 		NOT = { is_year = 1515 }
 		NOT = { has_country_flag = had_fflavor_5 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
 	}
 	
 	immediate = { set_country_flag = had_fflavor_5 }
@@ -184,12 +206,17 @@ country_event = {
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
+		tag = FRA
 		has_ruler = "Anne de Beaujeu"
 		NOT = { heir_age = 15 }
 		ORL = {
 			has_ruler = "Louis II"
 		}
 		NOT = { has_country_flag = had_fflavor_6 }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
 	}
 	
 	immediate = { set_country_flag = had_fflavor_6 }
@@ -221,16 +248,9 @@ country_event = {
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_ruler = "(Regent) Louis II, Duke of Órleans"
-				heir_age = 15
-			}
-			AND = {
-				has_ruler = "(Regent) Louis II, Duke of Órleans"
-				is_year = 1515
-			}
-		}
+		tag = FRA
+		has_ruler = "(Regent) Louis II, Duke of Órleans"
+		heir_age = 15
 		NOT = { has_country_flag = had_fflavor_7 }
 	}
 	
