@@ -1,0 +1,926 @@
+#I really can't tell the need of the Random New World thing for those, you can even make colonial regions without them, your choice.
+#Same goes for culture, trade goods and religion, I only use them because... why not?
+#Just drop the provinces and names within the colonial region and you're done.
+#First rule of the Colonial Club: You give Portugal the cool names.
+#For specific names, culture-province based names first, cultural second and provincial third, check the files for examples
+
+#Australia
+colonial_australia = {
+	color = { 204 119 34 } #Ochre (it's not ochre yet)
+
+	# Random New World
+	tax_income = 0
+	native_size = 1
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		fish = 5
+		grain = 4
+		wool = 3
+		naval_supplies = 2
+		gold = 2
+	}
+	
+	culture = {
+		aboriginal = 10
+	}
+	
+	religion = {
+		animism = 10
+	}
+
+	provinces = {
+		1084 1085 1086 1087 1088 1089 1090 1091 1092 1093 1094 
+	}
+	
+	# Specific
+	names = {
+		trigger = {
+			OR = {
+				tag = NED
+				tag = HOL
+				owns = 97
+			}
+		}
+		name = "COLONIAL_CANADA_Nova_Hollandia"
+	}
+	names = {
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = GBR
+				tag = GBS
+				tag = WAL
+			}
+		}
+		name = "COLONIAL_AUSTRALIA_NEW_S_WALES"
+	}
+	names = {
+		trigger = {
+			primary_culture = austrian
+		}
+		name = "COLONIAL_AUSTRALIA_Austrian"
+	}
+	# Generic
+	names = {
+		name = "COLONIAL_AUSTRALIA_Australia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_AUSTRALIA_Root_GetName_Australia"
+	}
+}
+
+#New Zealand
+colonial_zealand = {
+	color = { 30 150 150 } #dunno
+	
+	# Random New World
+	tax_income = 0
+	native_size = 4
+	native_ferocity = 1
+	native_hostileness = 4
+	
+	trade_goods = {
+		fish = 5
+		grain = 4
+		wool = 3
+		naval_supplies = 2
+		gold = 2
+	}
+	
+	culture = {
+		polynesian = 10
+	}
+	
+	religion = {
+		animism = 10
+	}
+	
+	provinces = {
+		1106 1107 1108 1109 1246
+	}
+	
+	#Specific
+	names = {
+		trigger = {
+			primary_culture = dutch
+		}
+		name = "COLONIAL_NZ_NOVA_ZEELANDIA"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_NZ_Root_GetName_Oceania"
+	}
+}
+
+#Indonesia
+colonial_indonesia = {
+	color = { 200 30 55 }
+	
+	# RNW
+	tax_income = 0
+	native_size = 1
+	native_ferocity = 8
+	native_hostileness = 8
+	
+	trade_goods = {
+		spices = 10
+		fish = 5
+		naval_supplies = 2
+		grain = 2
+		cotton = 2
+	}
+	
+	culture = {
+		malayan = 10
+		sulawesi = 8
+		filipino = 8
+		papuan = 6
+	}
+	
+	religion = {
+		animism = 10
+		sunni = 8
+		hinduism = 6
+	}
+	
+	provinces = {
+		595 596 597 598 599
+		617 618 619 620 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638  639 640
+		641 642 643 644 645 646 647 648 649 650 651 652 653 654 655 656 657 658 659
+	}
+	#Specific
+	names = {
+		trigger = {
+			primary_culture = dutch
+		}
+		name = "COLONIAL_INDONESIA_Dutch"
+	}
+	names = {
+		trigger = {
+			tag = SPA
+			OR = {
+				owns = 658
+				owns = 657
+				owns = 656
+				owns = 655
+				owns = 654
+				owns = 653
+				owns = 652
+			}
+		}
+		name = "COLONIAL_INDONESIA_Philippines"
+	}
+	names = {
+		trigger = {
+			owns = 636
+		}
+		name = "COLONIAL_INDONESIA_Brunei"
+	}
+	names = {
+		trigger = {
+			owns = 596
+		}
+		name = "COLONIAL_INDONESIA_Malacca"
+	}
+	names = {
+		trigger = {
+			owns = 635
+			OR = {
+				tag = TIM
+				dynasty = "Timurid"
+			}
+		}
+		name = "COLONIAL_INDONESIA_Timur"
+	}
+	names = {
+		trigger = {
+			owns = 635
+		}
+		name = "COLONIAL_INDONESIA_Timor"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_INDONESIA_Root_GetName_Indonesia"
+	}
+}
+
+#Pacific Ocean Islands/Polynesia
+colonial_pacific_islands = {
+	color = { 50 140 70 }
+	
+	# RNW
+	tax_income = 0
+	native_size = 1
+	native_ferocity = 1
+	native_hostileness = 1
+	
+	trade_goods = {
+		fish = 5
+		naval_supplies = 2
+	}
+	
+	culture = {
+		polynesian = 10
+		papuan = 4
+	}
+	
+	religion = {
+		animism = 10
+	}
+	
+	provinces = {
+		1235 1236 1237 1238 1239 1240 1241 1242 1243 1244 1245
+		1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997
+	}
+	#Specific
+	names = {
+		trigger = {
+			primary_culture = castillian
+			any_owned_province = { culture = papuan }
+		}
+		name = "COLONIAL_PACIFIC_New_Guinea"
+	}
+	names = {
+		trigger = {
+			owns = 1237
+		}
+		name = "COLONIAL_PACIFIC_Papua"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_PACIFIC_Root_GetName_Pacific"
+	}
+	names = {
+		name = "COLONIAL_PACIFIC_Root_GetName_Polynesia"
+	}
+}
+
+#Korea
+colonial_korea = {
+	color = { 30 50 200 }
+	
+	# RNW
+	tax_income = 4
+	native_size = 10
+	native_ferocity = 4
+	native_hostileness = 5
+	
+	trade_goods = {
+		grain = 10
+		fish = 5
+		chinaware = 5
+	}
+	
+	culture = {
+		korean = 10
+	}
+	
+	religion = {
+		confucianism = 10
+	}
+	
+	provinces = {
+		732 733 734 735 736 737 1013 1845
+	}
+	
+	#Generic
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_KOREA_Root_GetName_Korea"
+	}
+}
+
+#Indochina
+colonial_indochina = {
+	color = { 50 100 30 }
+	
+	#RNW
+	tax_income = 6
+	native_size = 10
+	native_ferocity = 4
+	native_hostileness = 5
+	
+	trade_goods = {
+		grain = 10
+		fish = 8
+		wool = 5
+		tea = 2
+		spices = 2
+		ivory = 1
+	}
+	
+	culture = {
+		vietnamese = 5
+		khmer = 5
+		mon = 5
+		burmese = 4
+		cham = 3
+		central_thai = 2
+	}
+	
+	religion = {
+		buddhism = 10
+		hinduism = 2
+	}
+	
+	provinces = {
+		579 580 581 582 583 584 585 586 587 588 589 590 591 592 593 594 600 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616
+		1016 1022 1815 1817 1823 1844
+	}
+	#Specific
+	names = {
+		trigger = {
+			owns = 600
+		}
+		name = "COLONIAL_INDOCHINA_Thailand"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_INDOCHINA_Root_GetName_Indochina"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Eastern Siberia
+colonial_siberia = {
+	color = { 130 200 30 }
+	
+	#RNW
+	tax_income = 0
+	native_size = 1
+	native_ferocity = 1
+	native_hostileness = 1
+	
+	trade_goods = {
+		fur = 10
+		fish = 8
+		naval_supplies = 5
+		gold = 2
+	}
+	
+	culture = {
+		yakut = 10
+		inuit = 8
+	}
+	
+	religion = {
+		shamanism = 10
+		sunni = 4
+	}
+	
+	provinces = {
+		1032 1033 1034 1035 1036 1037 1038 1039 1040 1041 1042 1043 1044 1045 1046 1047 1048
+		1051 1052 1053 1054 1055 1056 1057 1058 1059 1060
+	}
+	
+	#Generic
+	names = {
+		name = "COLONIAL_SIBERIA_Root_GetName_SIBERIA"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Arabia
+colonial_arabia = {
+	color = { 188  166  93 }
+	
+	#RNW
+	tax_income = 8
+	native_size = 18
+	native_ferocity = 10
+	native_hostileness = 10
+	
+	trade_goods = {
+		spices = 10
+		coffee = 8
+		wool = 8
+		grain = 6
+		cloth = 2
+	}
+	
+	culture = {
+		bedouin_arabic = 10
+		persian = 8
+		al_iraqiya_arabic = 6
+		al_suryah_arabic = 6
+		al_misr_arabic = 4
+	}
+	
+	religion = {
+		sunni = 10
+		shiite = 4
+	}
+	
+	provinces = {
+		405 383 384
+		385 386 393 392 387 388 390 389 391 402 401 403 400 399 398 404 397 395 396 394
+	}
+	#Specific
+	names = {
+		trigger = {
+			owns = 400
+			NOT = { tag = POR }
+		}
+		name = "COLONIAL_ARABIA_Oman"
+	}
+	names = {
+		trigger = {
+			owns = 400
+			tag = POR
+		}
+		name = "COLONIAL_ARABIA_POR_Muscat"
+	}
+	names = {
+		trigger = {
+			owns = 388
+		}
+		name = "COLONIAL_ARABIA_Aden"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_ARABIA_Root_GetName_Arabia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#North Africa
+colonial_north_africa = {
+	color = { 140 75 200 }
+	provinces = {
+		1115 1121 1123 1124 
+		1127 1128 1129 1130 1131 1132 1133 1134 1135 1136 1137 1142 1143 1148 1149 1150 1154 1155 1156 1157 1158 1159 1160 1161
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_NORTH_AFRICA_Root_GetName_North_Africa"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Abyssinia (Nubia + Ethiopia)
+colonial_abyssinia = {
+	color = { 30 30 150 }
+	provinces = {
+		1210 1213 1216 1217 1218 1219 1220 1221 1222 1223 1224 1225 1226 1227 1228 1229 1230 
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_ABYSSINIA_Root_GetName_Abyssinia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Western Africa
+colonial_west_africa = {
+	color = { 180 30 255 }
+	culture = {
+		mali = 10
+		yorumba = 5
+		dyola = 4
+		senegambian = 4
+		bantu = 3
+		ashanti = 2
+		aka = 2
+	}
+	religion = {
+		animism = 10
+		sunni = 5
+	}
+	provinces = {
+		1097 1113 1114 1116 1117 1118 1119 1120 1122 1125 1126 1138
+		1139 1140 1141 1144 1145 1146 1147 1151 1152 1153
+		1162 1163 1249
+	}
+	#Specific
+	names = {
+		trigger = {
+			owns = 1164
+		}
+		name = "COLONIAL_WEST_AFRICA_Cameroon"
+	}
+	#Add the french equivalents if you think the French are that important (and colonized Africa) that fucking early in history
+	names = {
+		trigger = {
+			owns = 1126
+		}
+		name = "COLONIAL_WEST_AFRICA_Ivory"
+	}
+	names = {
+		trigger = {
+			owns = 1139
+		}
+		name = "COLONIAL_WEST_AFRICA_Gold"
+	}
+	names = {
+		trigger = {
+			owns = 1119
+		}
+		name = "COLONIAL_WEST_AFRICA_Grain"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_WEST_AFRICA_Root_GetName_West_Africa"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Kongo
+colonial_kongo = {
+	color = { 130 200 10 }
+	culture = {
+		kongolese = 10
+		aka = 1
+	}
+	religion = {
+		shamanism = 10
+	}
+	provinces = {
+		1164 1165 1166 1167 1168 1169 1170 1171 1172 1173
+	}
+	#Specific
+	names = {
+		trigger = {
+			tag = POR
+		}
+		name = "COLONIAL_EAST_AFRICA_Angola"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_KONGO_Root_GetName_Kongo"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#East Africa
+colonial_east_africa = {
+	color = { 30 150 150 }
+	culture = {
+		swahili = 10
+		bantu = 8
+		shona = 5
+	}
+	religion = {
+		animism = 10
+		sunni = 8
+	}
+	provinces = {
+		1182 1183 1184 1185 1186 1187 1188 1189 1190 1191 1192 1195 1196 1197 1198 1199 1200 1201 1202 1203 1204
+		1193 1194 1792 
+		1100 1101 1102 1103 
+	}
+	#Specific
+	names = {
+		trigger = {
+			tag = POR
+		}
+		name = "COLONIAL_EAST_AFRICA_Portuguese"
+	}
+	names = {
+		trigger = {
+			owns = 1201
+		}
+		name = "COLONIAL_EAST_AFRICA_Zanzibar"
+	}
+	names = {
+		trigger = {
+			OR = {
+				owns = 1194
+				owns = 1193
+				owns = 1792
+			}
+		}
+		name = "COLONIAL_EAST_AFRICA_Madagascar"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_EAST_AFRICA_Root_GetName_East_Africa"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Somalia
+colonial_somalia = {
+	color = { 120 30 50 }
+	culture = {
+		somali = 10
+	}
+	religion = {
+		sunni = 10
+	}
+	provinces = {
+		1205 1206 1207 1208 1209 1211 1212 1214 1215
+		2024
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_SOMALIA_Root_GetName_Somalia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#South Africa
+colonial_south_africa = {	
+	color = { 55 170 80 }
+	culture = {
+		bantu = 10
+	}
+	religion = {
+		animism = 10
+	}
+	provinces = {
+		1174 1175 1176 1177 1178 1179 1180 1181
+	}
+	#Specific
+	names = {
+		trigger = {
+			tag = POR
+			owns = 1177
+		}
+		name = "COLONIAL_SOUTH_AFRICA_Portuguese"
+	}
+	names = {
+		trigger = {
+			NOT = {
+				OR = {
+					tag = POR
+					culture_group = lowland
+				}
+			}
+			owns = 1177
+		}
+		name = "COLONIAL_SOUTH_AFRICA_Cape"
+	}
+	names = {
+		trigger = {
+			culture_group = lowland
+		}
+		name = "COLONIAL_SOUTH_AFRICA_Dutch"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_SOUTH_AFRICA_Root_GetName_South_Africa"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#India
+colonial_india = {
+	color = { 30 200 70 }
+	culture = {
+		rajput = 8
+		marathi = 8
+		telegu = 5
+		tamil = 5
+		kannada = 5
+		avadhi = 5
+		bengali = 4
+		gujarati = 4
+		malayalam = 4
+		panjabi = 4
+		kanauji = 3
+		nepali = 3
+		sindhi = 2
+		sinhala = 1
+		kashmiri = 1
+	}
+	religion = {
+		hinduism = 10
+	}
+	provinces = {
+		572 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521	522 523 524 525 526 527
+		528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544 545 546 547 548 549 550 551 552 553
+		554 555 556 557 558 559 560 561 562 563 564 565 566 567 568 569 570 571 573 578 740 1946 1947 1948 1949
+	}
+	#Specific
+	names = {
+		trigger = {
+			tag = POR
+		}
+		name = "COLONIAL_INDIA_POR_India"
+	}
+	names = {
+		trigger = {
+			tag = GBR
+		}
+		name = "COLONIAL_INDIA_British_Raj"
+	}
+	names = {
+		trigger = {
+			owns = 561
+		}
+		name = "COLONIAL_INDIA_Bengal"
+	}
+	names = {
+		trigger = {
+			capital_scope = { continent = europe }
+		}
+		name = "COLONIAL_INDIA_Company"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_INDIA_Root_GetName_India"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Manchuria
+colonial_manchuria = {
+	color = { 250 140 55 }
+	culture = {
+		manchu = 10
+	}
+	religion = {
+		confucianism = 10
+	}
+	provinces = {
+		724 725 727 728 729 730 731 1049 1050 1850
+	}
+	names = {
+		trigger = {
+			primary_culture = japanese
+		}
+		name = "COLONIAL_MANCHURIA_Manchukuo"
+	}
+	names = {
+		name = "COLONIAL_MANCHURIA_Root_GetName_Manchuria"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#China
+colonial_china = {
+	color = { 255 255 0 }
+	culture = {
+		chihan = 10
+		cantonese = 8
+	}
+	religion = {
+		confucianism = 10
+	}
+	provinces = {
+		660 661 662 663 664 665 666 667 668 669 670 671 672 673 674 675 679 680 681 682 683 684 685 686
+		687 688 689 690 691 692 693 694 695 696 697 698 699 700 703 704 707 708 726 738 1816
+		1821 1822 1824 1829 1833 1836 1838 1840
+	}
+	#Specific
+	names = {
+		trigger = {
+			owns = 668
+		}
+		name = "COLONIAL_CHINA_Macau"
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_CHINA_Root_GetName_China"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Persia
+colonial_persia = {
+	color = { 200  177  128 } #Sand Persia
+	provinces = {
+		412 413 414 417 426 427 428 429 430 431 432 433 434 435 436 445 446 447 449 575 576 577
+	}
+	#Generic
+	names = {
+		name = "COLONIAL_PERSIA_Root_GetName_Persia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Japan
+colonial_japan = {
+	color = { 255 50 0 }
+	provinces = {
+		1012 1014 1017 1018 1019 1020 1021 1023 1024 1025 1026 1027
+		1028 1029 1030 1031 1818 1819 1820 1825 1830
+		1832 1835 1837 1839 1843 1847 1852
+	}
+	names = {
+		name = "COLONIAL_JAPAN_Root_GetName_Japan"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Iraq-Syria
+colonial_crescent = {
+	color = { 255 255 140 }
+	provinces = {
+		408 409 410 411 415 #Iraq
+		377 378 382 406 407 1849 1855
+	}
+	#Generic
+	names = {
+		trigger = {
+			owns = 411
+		}
+		name = "COLONIAL_CRESCENT_Iraq"
+	}
+	names = {
+		trigger = {
+			owns = 377
+		}
+		name = "COLONIAL_CRESCENT_Syria"
+	}
+	names = {
+		name = "COLONIAL_CRESCENT_Root_GetName_Crescent"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+
+#Egypt
+colonial_egypt = {
+	color = { 111 227 245 }
+	provinces = {
+		379 381 380 1854 365 364 363 362 358 357 361 359 1233 360 1234 1231 1232
+	}
+	names = {
+		trigger = {
+			owns = 361
+		}
+		name = "COLONIAL_EGYPT_Cairo"
+	}
+	names = {
+		trigger = {
+			owns = 365
+			NOT = { owns = 361 }
+		}
+		name = "COLONIAL_EGYPT_Sinai"
+	}
+	names = {
+		trigger = {
+			NOT = { owns = 361 }
+			owns = 379
+		}
+		name = "COLONIAL_EGYPT_Palestine"
+	}
+	names = {
+		trigger = {
+			NOT = { owns = 361 }
+			OR = {
+				owns = 360
+				owns = 1233
+				owns = 1234
+				owns = 1231
+				owns = 1232
+			}
+		}
+		name = "COLONIAL_EGYPT_Upper_Egypt"
+	}
+	names = {
+		name = "COLONIAL_EGYPT_Root_GetName_Egypt"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+}
+	

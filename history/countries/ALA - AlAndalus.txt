@@ -1,0 +1,164 @@
+government = despotic_monarchy
+
+mercantilism = 0.1
+
+primary_culture = andalucian
+culture_group_union = iberian
+religion = sunni
+add_accepted_culture = berber
+technology_group = muslim
+capital = 225	# Cordoba
+
+756.1.1 = {
+	monarch = {
+		name = "Abd ar-Rahman I"
+		dynasty = "Umayyad"
+	}
+}
+
+788.1.1 = {
+	monarch = {
+		name = "Hisham I"
+		dynasty = "Umayyad"
+	}
+}
+
+796.1.1 = {
+	monarch = {
+		name = "Al-Hakam I"
+		dynasty = "Umayyad"
+	}
+}
+
+822.1.1 = {
+	monarch = {
+		name = "Abd ar-Rahman II"
+		dynasty = "Umayyad"
+	}
+}
+
+852.1.1 = {
+	monarch = {
+		name = "Muhammad I"
+		dynasty = "Umayyad"
+	}
+}
+
+886.1.1 = {
+	monarch = {
+		name = "al-Mundhir I"
+		dynasty = "Umayyad"
+	}
+}
+
+888.1.1 = {
+	monarch = {
+		name = "Abdallah I"
+		dynasty = "Umayyad"
+	}
+}
+
+912.1.1 = {
+	monarch = {
+		name = "Abd ar-Rahman III"
+		dynasty = "Umayyad"
+	}
+}
+
+961.1.1 = {
+	monarch = {
+		name = "Al-Hakam II"
+		dynasty = "Umayyad"
+	}
+}
+
+976.1.1 = {
+	monarch = {
+		name = "Hisham II"
+		dynasty = "Umayyad"
+	}
+}
+
+1008.1.1 = {
+	monarch = {
+		name = "Muhammad II"
+		dynasty = "Umayyad"
+	}
+}
+
+1009.1.1 = {
+	monarch = {
+		name = "Sulayman II"
+		dynasty = "Umayyad"
+	}
+}
+
+1010.1.1 = {
+	monarch = {
+		name = "Hisham II"
+		dynasty = "Umayyad"
+	}
+}
+
+1012.1.1 = {
+	monarch = {
+		name = "Sulayman II"
+		dynasty = "Umayyad"
+	}
+}
+
+1016.1.1 = {
+	monarch = {
+		name = "Abd ar-Rahman IV"
+		dynasty = "Umayyad"
+	}
+}
+
+1017.1.1 = {
+	monarch = {
+		name = "'Alî I"
+		dynasty = "Hammudid"
+	}
+}
+
+1018.1.1 = {
+	monarch = {
+		name = "Al-Qasim I"
+		dynasty = "Hammudid"
+	}
+}
+
+1021.1.1 = {
+	monarch = {
+		name = "Yahya I"
+		dynasty = "Hammudid"
+	}
+}
+
+1023.1.1 = {
+	monarch = {
+		name = "Al-Qasim I"
+		dynasty = "Hammudid"
+	}
+}
+
+1023.6.1 = {
+	monarch = {
+		name = "Abd ar-Rahman V"
+		dynasty = "Umayyad"
+	}
+}
+
+1024.1.1 = {
+	monarch = {
+		name = "Muhammad III"
+		dynasty = "Umayyad"
+	}
+}
+
+1026.1.1 = {
+	monarch = {
+		name = "Hisham III"
+		dynasty = "Umayyad"
+	}
+}

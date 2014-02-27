@@ -1,0 +1,9 @@
+government = despotic_monarchy
+
+#innovative_narrowminded = 2
+mercantilism = 0.1
+
+primary_culture = prussian
+religion = catholic
+technology_group = western
+capital = 1841	# Marienburg

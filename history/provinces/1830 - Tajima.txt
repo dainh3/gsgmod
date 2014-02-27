@@ -1,0 +1,28 @@
+#1830 - Tajima
+
+owner = YMN
+controller = YMN
+culture = japanese
+religion = shinto
+capital = "Tottori"
+trade_goods = chinaware
+hre = no
+base_tax = 2
+manpower = 2
+citysize = 7050
+add_core = YMN
+fort1 = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+
+1569.1.1 = { add_core = ODA }
+1573.7.3 = { add_core = JAP remove_core = ODA }
+# Nobunaga ousts Yoshiaki
+1580.5.21 = { owner = JAP controller = JAP }
+1580.7.2 = { remove_core = YMN }
+1582.9.8 = { add_core = HSK owner = HSK controller = HSK remove_core = JAP }
+1600.10.21 = { add_core = JAP owner = JAP controller = JAP remove_core = HSK }
+# Battle of Sekigahara

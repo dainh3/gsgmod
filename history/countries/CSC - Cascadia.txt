@@ -1,0 +1,5 @@
+government = enlightened_despotism
+technology_group = western
+religion = reformed
+primary_culture = english
+capital = 973 # Squamish

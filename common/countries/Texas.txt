@@ -1,0 +1,111 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+is_colonial = yes
+
+color = { 250 236 222 }
+
+historical_idea_groups = {
+	exploration_ideas
+	economic_ideas
+	defensive_ideas
+	expansion_ideas
+	trade_ideas
+	diplomatic_ideas
+	offensive_ideas
+	quality_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	spanish_tercio
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"George #0" = 20
+	"James #0" = 20
+	"John #0" = 20
+	"Thomas #0" = 20
+	"Charles #0" = 15
+	"Daniel #0" = 15
+	"Henry #0" = 15
+	"Samuel #0" = 15
+	"Arthur #0" = 10
+	"Cyrus #0" = 10
+	"David #0" = 10
+	"Elias #0" = 10
+	"Nathaniel #0" = 10
+	"Peyton #0" = 10
+	"Richard #0" = 10
+	"Aaron #0" = 0
+	"Angus #0" = 0
+	"Benjamin #0" = 0
+	"Calvin #0" = 0
+	"Darren #0" = 0
+	"Eric #0" = 0
+	"Francis #0" = 0
+	"Isaac #0" = 0
+	"Jonathan #0" = 0
+	"Joseph #0" = 0
+	"Kyran #0" = 0
+	"Luke #0" = 0
+	"Milton #0" = 0
+	"Patrick #0" = 0
+	"Paul #0" = 0
+	"Philip #0" = 0
+	"Randolf #0" = 0
+	"Silvester #0" = 0
+	"Timothy #0" = 0
+	"Wilbur #0" = 0
+	"William #0" = 0
+	"Alexander #0" = 0
+    "Stephen #0" = 0
+	
+    "Deborah #0" = -1
+    "Sarah #0" = -1
+    "Anne #0" = -1
+}
+
+leader_names = {
+	Meadows 
+	Caboto
+	Verizano
+	Bush 
+	Norris
+	Jones
+	Reyes
+	"de Vasquez" 
+	Dixon
+	Lawrence
+	Raul
+	Alexander
+	Jackson
+	Houston
+	Austin
+	Crockett
+	Shermann
+	Rusk
+}
+
+ship_names = {
+	Republic Houston Liberty Freedom "Lone Star" "Rio Grande" Harrisburg Galveston Columbia Velasco Brazos "de Zavala" "Lamar" "Anderson"
+}
+
+army_names = {
+	"Federal Army" "Liberty Army" "Republican Army" "$PROVINCE$ Militia"
+}
+fleet_names = {
+	"Federal Navy" "$PROVINCE$ Squadron"
+}

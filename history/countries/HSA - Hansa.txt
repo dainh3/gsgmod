@@ -1,0 +1,105 @@
+government = merchant_republic
+#aristocracy_plutocracy = 3
+#centralization_decentralization = 1
+#innovative_narrowminded = -2
+mercantilism = 0.25
+#offensive_defensive = 3
+#land_naval = 2
+#quality_quantity = -2
+#serfdom_freesubjects = 3
+technology_group = western
+religion = catholic
+primary_culture = hannoverian
+capital = 45	# Lübeck
+
+
+1443.1.1 = {
+	monarch = { #WHY A REGENT REPUBLIC, PARADOX?
+		name = "Johann Lüneburg"
+		birth_date = 1385.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1461.1.1 = {
+	monarch = {
+		name = "Johann Westphal"
+		birth_date = 1397.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1475.1.1 = {
+	monarch = {
+		name = "Ludeke von Thünen"
+		birth_date = 1430.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1501.1.1 = {
+	monarch = {
+		name = "Tidemann Berck"
+		birth_date = 1450.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1522.1.1 = {
+	monarch = {
+		name = "Hermann Falcke"
+		birth_date = 1470.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1529.1.1 = { religion = protestant }
+
+1531.1.1 = {
+	monarch = {
+		name = "Joachim Gercken"
+		birth_date = 1490.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1544.1.1 = {
+	monarch = {
+		name = "Nikolaus Bardewik"
+		birth_date = 1506.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1560.1.1 = {
+	monarch = {
+		name = "Christoph Tode"
+		birth_date = 1515.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1566.1.1 = { #Looking at the German wiki is terrible, but still, no reason for a obligatory 4 years regency in any starting year
+	monarch = {
+		name = "Tagfahrt"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

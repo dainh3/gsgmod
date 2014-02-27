@@ -1,0 +1,33 @@
+#1817 - Nan
+
+owner = SUK
+controller = SUK
+culture = northern_thai
+religion = buddhism
+capital = "Nan"
+trade_goods = rice
+hre = no
+base_tax = 1
+manpower = 1
+citysize = 5000
+add_core = SUK
+discovered_by = chinese
+discovered_by = indian
+
+1438.1.1 = {	owner = AYU
+		controller = AYU
+		add_core = AYU
+		remove_core = SUK
+	   } # Sukhothai is annexed by Ayutthaya
+1450.1.1 = { citysize = 6000 }
+1500.1.1 = { citysize = 7000 }
+1550.1.1 = { citysize = 8500 }
+1564.2.1 = { add_core = TAU } # Burmese vassal
+1584.5.3 = { remove_core = TAU }
+1600.1.1 = { citysize = 8600 }
+1650.1.1 = { citysize = 9000 }
+1700.1.1 = { citysize = 10000 }
+1750.1.1 = { citysize = 12000 }
+1767.4.1 = { revolt_risk = 7 } # The fall of Ayutthaya
+1774.1.1 = { revolt_risk = 0 }
+1800.1.1 = { citysize = 13500 }

@@ -1,0 +1,21 @@
+#1012 - Satsuma
+
+owner = SMZ
+controller = SMZ
+culture = japanese
+religion = shinto
+capital = "Kagoshima"
+trade_goods = naval_supplies
+hre = no
+base_tax = 4
+manpower = 2
+citysize = 6000
+add_core = SMZ
+fort1 = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+
+1542.1.1 = { discovered_by = POR }

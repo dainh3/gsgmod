@@ -1,0 +1,71 @@
+#France
+estates_happy = {
+	global_revolt_risk = -1
+}
+
+estates_upset = {
+	global_revolt_risk = 2
+}
+
+nobility_aggrandized = {
+	discipline = 0.05
+	land_morale = 0.2
+}
+
+nobility_curtailed = {
+	discipline = -0.05
+	land_morale = -0.2
+}
+
+bourgeoisie_aggrandized = {
+	trade_efficiency = 0.05
+	global_trade_power = 0.05
+}
+
+bourgeoisie_curtailed = {
+	trade_efficiency = -0.05
+	global_trade_power = -0.05
+}
+
+clergy_aggrandized = {
+	legitimacy = 0.5
+	stability_cost_modifier = -0.05
+}
+
+clergy_curtailed = {
+	legitimacy = -0.5
+	stability_cost_modifier = 0.05
+}
+
+gabelle = {
+	local_tax_modifier = 0.05
+	local_production_efficiency = 0.1
+	local_revolt_risk = 1
+}
+
+champart = {
+	local_tax_modifier = 0.05
+	local_production_efficiency = 0.1
+	local_revolt_risk = 1
+}
+
+taille = {
+	global_tax_modifier = 0.05
+	global_revolt_risk = 1
+}
+
+dime = {
+	global_tax_modifier = 0.05
+	global_revolt_risk = 1
+}
+
+fra_decentralized_state = {
+	vassal_income = -0.2
+	stability_cost_modifier = 0.05
+}
+
+fra_infuriated_nobles = {
+	vassal_income = -0.5
+	stability_cost_modifier = 0.1
+	global_revolt_risk = 3
+}

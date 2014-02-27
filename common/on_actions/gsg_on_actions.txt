@@ -1,0 +1,22 @@
+# country 
+on_new_monarch = {
+	events = {
+		tribal_succession.1	# Harsh anti-tribals.
+		9492 			# Remove some event modifiers
+		flavor_mlo.1	# The Ambrosian Republic
+		flavor_boh.8	# Winter King in Prague
+		flavor_kol.1	# Bavarian Archbishop
+		flavor_eng.9291	# WotR - House of Lancaster wins
+		flavor_eng.9292	# WotR - House of York wins
+		flavor_tur.102	# Janissary Reward
+		purple_phoenix.1 # BYZ pretenders
+		gsg.17		#New Khagan, new wifes.
+	}
+	random_events = { 
+		1000 = 0
+		100 = flavor_kol.1	# Bavarian Archbishop
+		100 = flavor_dan.4	# Count's Feud
+		100 = flavor_tim.1	# The Disintegration of the Timurid Empire
+		100 = flavor_hsa.3 	# Hansa: Tagfahrt
+	}
+}

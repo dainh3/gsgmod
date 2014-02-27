@@ -1,0 +1,123 @@
+graphical_culture = westerngfx
+
+color = { 39 202 252 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	exploration_ideas
+	economic_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	quality_ideas
+	expansion_ideas
+}
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	italian_condotta
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Adam #0" = 10
+	"Abraham #0" = 10
+	"Adniel #0" = 10
+	"Bartholemew #0" = 10
+	"Benjamin #0" = 10
+	"Betzalel #0" = 10
+	"Daniel #0" = 10
+	"David #0" = 10
+	"Ezekiel #0" = 10
+	"Eliezer #0" = 10
+	"Elijah #0" = 10
+	"Gabriel #0" = 10
+	"Gideon #0" = 10
+	"Hezekiah #0" = 10
+	"Heber #0" = 10
+	"Immanuel #0" = 10
+	"Isaac #0" = 10
+	"Isaiah #0" = 10
+	"Ismael #0" = 10
+	"Israel #0" = 10
+	"Jacob #0" = 10
+	"Jael #0" = 10
+	"Jeb #0" = 10
+	"Jeremiah #0" = 10
+	"Job #0" = 10
+	"Joseph #0" = 10
+	"Joshua #0" = 10
+	"Judah #0" = 10
+	"Lazarus #0" = 10
+	"Lemuel #0" = 10
+	"Matthew #0" = 10
+	"Matz #0" = 10
+	"Manuel #0" = 10
+	"Moses #0" = 10
+	"Michael #0" = 10
+	"Nathan #0" = 10
+	"Nehemiah #0" = 10
+	"Noah #0" = 10
+	"Samuel #0" = 10
+	"Saul #0" = 10
+	"Shlomo #0" = 10
+	"Solomon #0" = 10
+	"Zacharias #0" = 10
+
+}
+
+leader_names = {
+	Aaron Allon
+	Baginski Begin Berkovich Berman
+	Chaim
+	Efron Eshkol
+	Finkelstein
+	Goldberg Goldstein
+	Herzl
+	Kaszinsky Kohen
+	Liebowicz Lebowski
+	Meir Milgram Milstein Mosse
+	Netanyahu	
+	Peres Peretz
+	Rabin
+	Shamir Sharett Silverstein Sobchak		
+}
+
+ship_names = {
+	"Eilat"
+	"Yaffo"
+	"Haifa"
+	"Miznak"
+	"Hetz"
+	"Kidon"
+	"Leviatan"
+	"Jerusalem"
+	"Dakar"
+	"Mivtach"
+	"Misgav"
+	"Haganah"
+	"Lahav"
+	"Hanit"
+	"Akko"
+	"Sa'ar"
+	"Sufa"
+	"Ga'ash"
+	"Herev"
+	"Reshef"
+	"Keshet"
+	"Romash"
+	"Tarshish"
+	"Nitzachon"
+	"Atzmaut"
+	"Moledet"
+	"Tanin"
+}

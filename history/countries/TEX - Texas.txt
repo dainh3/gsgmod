@@ -1,0 +1,5 @@
+government = federal_republic
+technology_group = western
+religion = protestant
+primary_culture = english
+capital = 886 # Waco

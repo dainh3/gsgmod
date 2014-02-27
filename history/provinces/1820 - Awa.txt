@@ -1,0 +1,26 @@
+#1820 - Awa
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Tokushima"
+trade_goods = fish
+hre = no
+base_tax = 4
+manpower = 2
+citysize = 5000
+add_core = HSK
+fort1 = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+
+1575.1.1 = { add_core = CSK}
+1580.1.1 = { owner = CSK controller = CSK remove_core = HSK }
+1585.8.23 = { owner = TKG controller = TKG add_core = TKG remove_core = CSK }
+#Hideyoshi's conquest of Shikoku
+1603.3.24 = { owner = JAP controller = JAP add_core = JAP remove_core = TKG }
+# Tokugawa shogunate founded

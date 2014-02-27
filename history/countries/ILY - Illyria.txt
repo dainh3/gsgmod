@@ -1,0 +1,9 @@
+government = feudal_monarchy
+
+mercantilism = 0.1
+
+primary_culture = croatian
+culture_group_union = south_slavic
+religion = catholic
+technology_group = eastern
+capital = 130

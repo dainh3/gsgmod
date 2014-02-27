@@ -1,0 +1,76 @@
+graphical_culture = westerngfx
+
+color = { 150 105 56 }
+
+historical_idea_groups = {
+	offensive_ideas
+	religious_ideas
+	economic_ideas
+	spy_ideas
+	defensive_ideas
+	trade_ideas
+	innovativeness_ideas
+	quality_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	italian_condotta
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Agnes #0" = -10
+	"Alphonso #0" = 10
+	"Baldwin #2" = 40
+	"Boniface #0" = 10
+	"Catherine #0" = -10
+	"Charles #0" = 10
+	"Eleanor #0" = -10
+	"Elisabeth #0" = -10
+	"Geoffrey #0" = 10
+	"Henry #1" = 10
+	"Louis #0" = 20
+	"James #0" = 10
+	"Jean #1" = 10
+	"Jeanne #0" = -10
+	"Marie #0" = -10
+	"Margaret #0" = -10
+	"Philip #0" = 10
+	"Pierre #1" = 10
+	"Robert #1" = 10
+	"Yolanda #0" = -10
+}
+
+leader_names = { 
+	Acciajuoli 
+	Contarini Crispo
+	Doria	
+	Fadrigue
+	Melissinos 
+	Palaeologus Plethon
+	Rendis
+	Saraceno 
+	Tocco
+	Zorzi 
+}
+
+ship_names = {
+	"Agios Thomas" 	Athena
+	Felves 
+	Laouses 
+	Makronisi
+	Patroklou Petalioi
+	Salamina Styra
+	Ypsili
+}
