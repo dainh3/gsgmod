@@ -1,0 +1,56 @@
+country_decisions = {
+	celtic_nation = {
+		major = yes
+		potential = {
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = IRE }
+			NOT = { tag = GBR }
+			NOT = { tag = GBS }
+			NOT = { tag = BRT }
+			NOT = { exists = CEL }
+			culture_group = gaelic
+		}
+		allow = { 
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			owns = 372
+			owns = 373
+			owns = 374
+			owns = 375
+			owns = 376
+			owns = 241
+			owns = 242
+			owns = 169
+			owns = 170
+			owns = 171
+			owns = 172
+			
+			is_core = 372
+			is_core = 373
+			is_core = 374
+			is_core = 375
+			is_core = 376
+			is_core = 241
+			is_core = 242
+			is_core = 169
+			is_core = 170
+			is_core = 171
+			is_core = 172
+
+		}
+		effect = {
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			change_tag = CEL
+			CEL = {
+				set_capital = 373 # Meath
+			}
+			culture_group_union = gaelic
+		}
+	}
+}

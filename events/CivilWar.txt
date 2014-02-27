@@ -1,0 +1,571 @@
+namespace = newcivilwar
+#monarchy edition
+country_event = {
+	id = newcivilwar.1
+	title = "NEW_CIVIL_WAR_1_TITLE"
+	desc = "NEW_CIVIL_WAR_1_DESC"
+	picture = CIVIL_WAR_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_flag = religious_turmoil } 
+		NOT = { has_country_flag = peasant_war }
+		NOT = { has_country_flag = internal_conflicts }
+		NOT = { has_country_flag = FRA_french_revolution }
+		NOT = { has_country_flag = revolution }
+		NOT = { has_country_flag = liberalism }
+		NOT = { has_country_flag = new_civil_war_flag } 
+		NOT = { has_country_flag = total_war_series } 
+		num_of_cities = 2
+		is_at_war = no
+		government = monarchy
+		NOT = { legitimacy = 50 }
+		NOT = { adm = 4 }
+		any_owned_province = {
+			base_tax = 5
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 720
+		modifier = {
+			factor = 0.5
+			overextension_percentage = 0.50
+		}
+		modifier = {
+			factor = 0.9
+			revolt_percentage = 0.1
+		}
+		modifier = {
+			factor = 1.5
+			stability = 0
+		}
+		modifier = {
+			factor = 2.0
+			stability = 1
+		}
+		modifier = {
+			factor = 2.5
+			stability = 2
+		}
+		modifier = {
+			factor = 5
+			stability = 3
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 1.5
+			prestige = 50
+		}
+		modifier = {
+			factor = 1.5
+			prestige = 30
+		}
+		modifier = {
+			factor = 2.0
+			mil  = 5
+		}
+	}
+	
+	immediate = {
+		set_country_flag = new_civil_war_flag
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_1_A"			# status quo
+		add_stability = -1
+		random_owned_province = {
+			limit = { 
+				is_core = ROOT 
+				base_tax = 5
+			}
+			pretender_rebels = 2
+			change_siege = 20		#so they take them quickly
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			revolutionary_rebels = 2
+			change_siege = 20
+		}
+		add_country_modifier = {
+			name = "new_civil_war"
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_1_B"			# side with pretenders
+		add_stability = -2
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+		}
+		add_legitimacy = -50
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			revolutionary_rebels = 2
+			change_siege = 20
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			pretender_rebels = 2
+			change_siege = 20
+		}
+		add_country_modifier = {
+			name = "new_civil_war"
+			duration = -1
+		}
+	}
+	option = {
+		name = "NEW_CIVIL_WAR_1_C"			# side with republicans
+		add_stability = -2
+		if = {
+			limit = {
+				NOT = { is_year = 1500 }
+			}
+			change_government = noble_republic
+		}
+		if = {
+			limit = {
+				is_year = 1500
+				NOT = { is_year = 1600 }
+			}
+			change_government = administrative_republic
+		}
+		if = {
+			limit = {
+				is_year = 1600
+				NOT = { is_year = 1700 }
+			}
+			change_government = republican_dictatorship
+		}
+		if = {
+			limit = {
+				is_year = 1700
+				NOT = { is_year = 1800 }
+			}
+			change_government = constitutional_republic
+		}
+		if = {
+			limit = {
+				is_year = 1800
+			}
+			change_government = revolutionary_republic
+		}
+		define_ruler = {
+			adm = 1
+			dip = 1
+			mil = 4
+		}
+		add_prestige = -50
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			noble_rebels = 2
+			change_siege = 20
+		}
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			noble_rebels = 2
+			change_siege = 20
+		}
+		add_country_modifier = {
+			name = "new_civil_war"
+			duration = -1
+		}
+	}
+}
+
+
+# A cry for help
+country_event = {
+	id = newcivilwar.2
+	title = "NEW_CIVIL_WAR_2_TITLE"
+	desc = "NEW_CIVIL_WAR_2_TITLE"
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		has_country_modifier = new_civil_war
+		NOT = { has_country_flag = allies }
+		revolt_percentage = 0.15
+		num_of_allies = 1
+	}
+
+	mean_time_to_happen = {
+		months = 24
+
+		modifier = {
+			factor = 0.9
+			num_of_allies = 3
+		}
+		modifier = {
+			factor = 0.9
+			num_of_allies = 4
+		}
+		modifier = {
+			factor = 0.9
+			revolt_percentage = 0.2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_percentage = 0.3
+		}
+		modifier = {
+			factor = 0.9
+			stability = 0
+		}
+		modifier = {
+			factor = 1.1
+			advisor = statesman
+		}
+		modifier = {
+			factor = 1.1
+			stability = 1
+		}
+	}
+	
+	immediate = {
+		set_country_flag = allies
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_2_A"			# Request aid from your allies
+		ai_chance = { factor = 40 }
+
+		if = {
+			limit = {
+				government = republic
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				noble_rebels = 1
+			}
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				revolutionary_rebels = 1
+			}
+		}
+		add_prestige = -50
+		add_dip_power = -100
+	}
+	option = {
+		name = "NEW_CIVIL_WAR_2_B"			# Rely on your own strength
+		ai_chance = { factor = 60 }
+		
+		if = {
+			limit = {
+				government = republic
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				noble_rebels = 1
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				noble_rebels = 1
+			}
+		}
+		if = {
+			limit = {
+				government = monarchy
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				revolutionary_rebels = 1
+			}
+			random_owned_province = {
+				limit = { is_core = ROOT }
+				revolutionary_rebels = 1
+			}
+		}
+	}
+}
+
+# Unscrupulous in-laws
+country_event = {
+	id = newcivilwar.3
+	title = "NEW_CIVIL_WAR_3_TITLE"
+	desc = "NEW_CIVIL_WAR_3_DESC"
+	picture = CIVIL_WAR_eventPicture
+	
+	trigger = {
+		has_country_modifier = new_civil_war
+		NOT = { has_country_flag = unscrupulous_inlaws }
+		NOT = { government = republic }
+		num_of_royal_marriages = 1
+	}
+
+	mean_time_to_happen = {
+		months = 36
+
+		modifier = {
+			factor = 0.9
+			num_of_royal_marriages = 3
+		}
+		modifier = {
+			factor = 0.9
+			revolt_percentage = 0.2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_percentage = 0.3
+		}
+		modifier = {
+			factor = 0.9
+			stability = 0
+		}
+		modifier = {
+			factor = 1.1
+			advisor = diplomat
+		}
+		modifier = {
+			factor = 1.1
+			dip = 4
+		}
+		modifier = {
+			factor = 1.1
+			dip = 5
+		}
+		modifier = {
+			factor = 1.1
+			stability = 1
+		}
+	}
+	
+	immediate = {
+		set_country_flag = unscrupulous_inlaws
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_3_A"			# Take appropriate measures
+		ai_chance = { factor = 40 }
+		add_adm_power = -25		
+		random_owned_province = {
+			limit = { is_core = ROOT }
+			pretender_rebels = 1
+		}
+	}
+	option = {
+		name = "NEW_CIVIL_WAR_3_B"		# Ignore their pathetic attempts
+		ai_chance = { factor = 60 }
+		add_prestige = -50
+	}
+}
+
+# Rebel forces take over
+province_event = {
+	id = newcivilwar.4
+	title = "NEW_CIVIL_WAR_4_TITLE"
+	desc = "NEW_CIVIL_WAR_4_DESC"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		owner = {
+			has_country_modifier = new_civil_war
+			is_at_war = no
+		}
+		has_siege = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { mil = 2 } }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { mil = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 0 } }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 2 }
+		}
+
+		modifier = {
+			factor = 1.1
+			owner = { is_monarch_leader = yes }
+		}
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_4_A"			# We'll have to accept defeat, for now
+		change_siege = 2
+	}
+}
+
+# Army deserters
+country_event = {
+	id = newcivilwar.5
+	title = "NEW_CIVIL_WAR_5_TITLE"
+	desc = "NEW_CIVIL_WAR_5_DESC"
+	picture = LAND_MILITARY_eventPicture
+	
+	trigger = {
+		has_country_modifier = new_civil_war
+		NOT = { has_country_flag = deserting_troops }
+		manpower_percentage = 0.01
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+
+		modifier = {
+			factor = 1.1
+			is_monarch_leader = yes
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { prestige = 1 }
+		}
+		modifier = {
+			factor = 1.1
+			adm = 4
+		}
+		modifier = {
+			factor = 1.1
+			adm = 5
+		}
+		modifier = {
+			factor = 1.1
+			 mil = 4
+		}
+		modifier = {
+			factor = 1.1
+			mil = 5
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { adm = 1 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { mil = 2 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { mil = 1 }
+		}
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_5_A"			# Try to strengthen their morale
+		add_years_of_income = -0.50
+		add_country_modifier = {
+			name = "morale_boost"
+			duration = 1825
+		}		
+	}
+	option = {
+		name = "NEW_CIVIL_WAR_5_B"			# We have no resources for that
+		add_country_modifier = {
+			name = "deserters"
+			duration = 1825
+		}		
+		add_manpower = -0.10
+	}
+}
+
+#Support in capital
+country_event = {
+	id = newcivilwar.6
+	title = "NEW_CIVIL_WAR_6_TITLE"
+	desc = "NEW_CIVIL_WAR_6_DESC"
+	picture = LAND_MILITARY_eventPicture
+	
+	trigger = {
+		has_country_modifier = new_civil_war
+		NOT = { 
+			has_country_flag = civilwar_on_capital
+		}
+		capital_scope = {
+			controlled_by = owner
+			has_siege = no		
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	immediate = {
+		set_country_flag = civilwar_on_capital
+	}
+	option = {
+		name = "NEW_CIVIL_WAR_6_A"
+		capital_scope = {
+			pretender_rebels = 1
+			change_siege = 20		#so they take them quickly
+		}
+	
+	}	
+}
+
+# End of Civil War
+country_event = {
+	id = newcivilwar.100
+	title = "NEW_CIVIL_WAR_END_TITLE"
+	desc = "NEW_CIVIL_WAR_END_DESC"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_country_modifier = new_civil_war
+		had_country_flag = { flag = new_civil_war_flag days = 1095 }
+		NOT = {
+			OR = {
+				has_spawned_rebels = revolutionary_rebels
+				has_spawned_rebels = noble_rebels
+				has_spawned_rebels = pretender_rebels
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		clr_country_flag = new_civil_war_flag
+		clr_country_flag = allies
+		clr_country_flag = unscrupulous_inlaws
+		clr_country_flag = deserting_troops
+		clr_country_flag = civilwar_on_capital
+		remove_country_modifier = new_civil_war
+	}
+	
+	option = {
+		name = "NEW_CIVIL_WAR_END_A"
+		add_prestige = 10
+	}
+}

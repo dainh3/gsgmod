@@ -1,0 +1,139 @@
+country_decisions = {
+
+	french_nation = {
+		major = yes
+		potential = {
+			NOT = { exists = FRA }
+			NOT = { exists = RFR }
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
+			NOT = { tag = OCC }
+			NOT = { tag = BFR }
+			OR = {
+				culture_group = french
+				culture_group = basque_group
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns = 177	# Maine
+			owns = 179	# Blois
+			owns = 182	# Vermandois
+			owns = 183	# Île-de-France
+			owns = 184	# Orléannais
+			owns = 185	# Othe
+			owns = 186	# Champagne
+			is_core = 177	# Maine
+			is_core = 179	# Blois
+			is_core = 182	# Vermandois
+			is_core = 183	# Île-de-France
+			is_core = 184	# Orléannais
+			is_core = 185	# Othe
+			is_core = 186	# Champagne			
+		}
+		effect = {
+			gallia = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = FRA
+			}
+			aquitania = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = FRA
+			}
+			occitania = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = FRA
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			change_tag = FRA
+			FRA = {
+				set_capital = 183
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+	}
+	
+	#Shattered Europe >Breton France was stupid
+	french_nation_b = {
+		major = yes
+		potential = {
+			NOT = { exists = BFR }
+			NOT = { tag = OCC }
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }		#Basque is a valid culture for both FRA and SPA
+			primary_culture = breton
+		}
+		allow = {
+			NOT = { exists = FRA }
+			NOT = { exists = RFR }
+			is_at_war = no
+			owns = 177	#Maine
+			owns = 179	#Blois
+			owns = 182	#Vermandois
+			owns = 183	#Île-de-France
+			owns = 184	#Orléannais
+			owns = 185	#Othe
+			owns = 186	#Champagne
+			is_core = 177	#Maine
+			is_core = 179	#Blois
+			is_core = 182	#Vermandois
+			is_core = 183	#Île-de-France
+			is_core = 184	#Orléannais
+			is_core = 185	#Othe
+			is_core = 186	#Champagne			
+		}
+		effect = {
+			breton_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_core = BFR
+			}
+			gallia = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_core = BFR
+			}
+			aquitania = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = BFR
+			}
+			occitania = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = BFR
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			change_tag = BFR
+			BFR = {
+				set_capital = 183
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

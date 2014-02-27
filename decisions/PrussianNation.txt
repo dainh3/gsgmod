@@ -1,0 +1,125 @@
+country_decisions = {
+
+	prussian_nation = {
+		major = yes
+		potential = {
+			OR = {
+				tag = TEU
+				tag = TTN
+			}
+			NOT = { exists = PRU }
+			OR = {
+				ai = no
+				is_religion_enabled = protestant
+				is_religion_enabled = reformed
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			OR = {
+				religion = reformed
+				religion = protestant
+			}
+			owns = 41			# Ostpreussen
+		}
+		effect = {
+			PRU = {
+				add_core = 41			# Ostpreussen
+				add_core = 42			# Warmia
+				add_core = 43			# Danzig
+				add_core = 40			# Memel
+				add_core = 39			# Kurland
+				add_core = 271			# Samogitia
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_prestige = 25
+			change_tag = PRU
+			if = {
+				limit = { government = theocracy }
+				change_government = feudal_monarchy
+			}
+			set_capital = 41		# Ostpreussen
+			swap_free_idea_group = yes		#keep progress
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	prussian_nation_general = {
+		major = yes
+		potential = {
+			OR = {
+				ai = no
+				is_religion_enabled = protestant
+				is_religion_enabled = reformed
+			}
+			OR = {
+				primary_culture = pommeranian
+				primary_culture = saxon
+				primary_culture = prussian
+			}
+			NOT = { exists = PRU }
+			NOT = { tag = GER }
+			NOT = { tag = HLR }
+			NOT = { tag = BRA }
+			NOT = { tag = TEU }
+			NOT = { tag = TTN }
+		}
+		allow = {
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			OR = {
+				religion = reformed
+				religion = protestant
+			}
+			owns = 41			# Ostpreussen
+			owns = 42			# Warmia
+			owns = 43			# Danzig
+			is_core = 41		# Ostpreussen
+			is_core = 42		# Warmia
+			is_core = 43		# Danzig
+		}
+		effect = {
+			PRU = {
+				add_core = 41			# Ostpreussen
+				add_core = 42			# Warmia
+				add_core = 43			# Danzig
+				add_core = 40			# Memel
+				add_core = 39			# Kurland
+				add_core = 271			# Samogitia
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_prestige = 25
+			change_tag = PRU
+			change_primary_culture = prussian
+			capital_scope = {
+				change_culture = prussian
+			}
+			random_owned_province = {
+				limit = { 
+					is_capital = no 
+					OR = {
+						culture = saxon
+						culture = pommeranian
+					}
+				} 
+				change_culture = prussian
+			}
+			swap_free_idea_group = yes		#keep progress
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

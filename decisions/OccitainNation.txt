@@ -1,0 +1,48 @@
+country_decisions = {
+	occitain_nation = {
+		major = yes
+		potential = {
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = FRA }
+			NOT = { tag = BFR }
+			NOT = { exists = RFR }
+			NOT = { exists = OCC }
+			primary_culture = occitain
+		}
+		allow = { 
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			owns = 195
+			owns = 196
+			owns = 197
+			owns = 198
+			owns = 199
+			owns = 200
+			owns = 201
+			owns = 202
+			owns = 203
+			owns = 204
+			
+			is_core = 195
+			is_core = 196
+			is_core = 197
+			is_core = 198
+			is_core = 199
+			is_core = 200
+			is_core = 201
+			is_core = 202
+			is_core = 203
+			is_core = 204
+		}
+		effect = {
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			change_tag = OCC
+		}
+	}
+}

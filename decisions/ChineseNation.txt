@@ -1,0 +1,79 @@
+country_decisions = {
+
+	chinese_nation = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = chihan
+				primary_culture = manchu
+				primary_culture = cantonese				
+				AND = {
+					OR = {
+						is_colonial_nation = yes
+						is_former_colonial_nation = yes
+					}
+					colonial_china = {
+						owned_by = ROOT
+					}
+				}
+			}
+			NOT = { exists = CHN }
+		}
+		allow = {
+			technology_group = western
+			is_westernising = no
+			is_subject = no
+			is_at_war = no
+			owns = 1816			# Beijing
+			is_core = 1816		# Beijing
+		}
+		effect = {
+			random_owned_province = {
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			remove_faction = temples
+			remove_faction = enuchs
+			remove_faction = bureaucrats
+			if = {
+				limit = {
+					NOT = { adm_tech = 12 }
+				}
+				change_government = feudal_monarchy
+			}
+			if = {
+				limit = {
+					NOT = { adm_tech = 20 }
+					adm_tech = 12
+				}
+				change_government = administrative_monarchy
+			}
+			if = {
+				limit = {
+					NOT = { adm_tech = 29 }
+					adm_tech = 20
+				}
+				change_government = absolute_monarchy
+			}
+			if = {
+				limit = {
+					adm_tech = 29
+				}
+				change_government = enlightened_despotism
+			}
+			change_tag = CHN
+			chinese_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = CHN
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

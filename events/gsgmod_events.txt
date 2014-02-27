@@ -1,0 +1,1556 @@
+namespace = gsg
+namespace = testing
+
+# Converting Rich Provinces
+
+province_event = {
+	id = gsg.1
+	title = "RICHCONVERTCATHOLICTITLE"
+	desc = "RICHCONVERTCATHOLICDESC"
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = shiite
+			religion = sunni
+		}
+		base_tax = 8
+		owner = {
+			religion = catholic
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 10
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 12
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 14
+		}
+		
+		modifier = {
+			factor = 0.7
+			owner = {
+				advisor = inquisitor
+			}
+		}
+	}
+	
+	option = {
+		name = "RICHCATHOLICEXPEL"
+		ai_chance = { factor = 50 }
+		change_religion = catholic
+		add_base_tax = -6
+		owner = {
+			add_prestige = 5
+			add_papal_influence = 5
+		}
+		add_province_modifier = {
+			name = "expulsion_of_infidels"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "RICHCATHOLICTOLERATE"
+		ai_chance = { factor = 50 }
+		owner = {
+			add_prestige = -5
+			add_papal_influence = -5
+		}
+		add_province_modifier = {
+			name = "local_religious_tolerance"
+			duration = 365
+		}
+	}
+}
+
+province_event = {
+	id = gsg.2
+	title = "RICHCONVERTORTHODOXTITLE"
+	desc = "RICHCONVERTORTHODOXDESC"
+	picture = ORTHODOX_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = shiite
+			religion = sunni
+		}
+		base_tax = 8
+		owner = {
+			religion = orthodox
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 10
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 12
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 14
+		}
+		
+		modifier = {
+			factor = 0.7
+			owner = {
+				advisor = inquisitor
+			}
+		}
+	}
+	
+	option = {
+		name = "RICHORTHODOXEXPEL"
+		ai_chance = { factor = 50 }
+		change_religion = orthodox
+		add_base_tax = -6
+		owner = {
+			add_prestige = 5
+			add_patriarch_authority = 0.10
+		}
+		add_province_modifier = {
+			name = "expulsion_of_infidels"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "RICHORTHODOXTOLERATE"
+		ai_chance = { factor = 50 }
+		owner = {
+			add_prestige = -5
+			add_patriarch_authority = -0.10
+		}
+		add_province_modifier = {
+			name = "local_religious_tolerance"
+			duration = 365
+		}
+	}
+}
+
+province_event = {
+	id = gsg.3
+	title = "RICHCONVERTSUNNITITLE"
+	desc = "RICHCONVERTSUNNIDESC"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+		}
+		base_tax = 8
+		owner = {
+			religion = sunni
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 10
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 12
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 14
+		}
+		
+		modifier = {
+			factor = 0.7
+			owner = {
+				advisor = inquisitor
+			}
+		}
+	}
+	
+	option = {
+		name = "RICHSUNNIEXPEL"
+		ai_chance = { factor = 50 }
+		change_religion = sunni
+		add_base_tax = -6
+		owner = {
+			add_prestige = 5
+			add_piety = 0.1
+		}
+		add_province_modifier = {
+			name = "expulsion_of_infidels"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "RICHSUNNITOLERATE"
+		ai_chance = { factor = 50 }
+		owner = {
+			add_prestige = -5
+			add_piety = -0.1
+		}
+		add_province_modifier = {
+			name = "local_religious_tolerance"
+			duration = 365
+		}
+	}
+}
+
+province_event = {
+	id = gsg.4
+	title = "RICHCONVERTSHIITETITLE"
+	desc = "RICHCONVERTSHIITEDESC"
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = catholic
+			religion = orthodox
+			religion = protestant
+			religion = reformed
+		}
+		base_tax = 8
+		owner = {
+			religion = shiite
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 10
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 12
+		}
+		
+		modifier = {
+			factor = 0.9
+			base_tax = 14
+		}
+		
+		modifier = {
+			factor = 0.7
+			owner = {
+				advisor = inquisitor
+			}
+		}
+	}
+	
+	option = {
+		name = "RICHSHIITEEXPEL"
+		ai_chance = { factor = 50 }
+		change_religion = shiite
+		add_base_tax = -6
+		owner = {
+			add_prestige = 5
+			add_piety = 0.1
+		}
+		add_province_modifier = {
+			name = "expulsion_of_infidels"
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = "RICHSHIITETOLERATE"
+		ai_chance = { factor = 50 }
+		owner = {
+			add_prestige = -5
+			add_piety = -0.1
+		}
+		add_province_modifier = {
+			name = "local_religious_tolerance"
+			duration = 365
+		}
+	}
+}
+
+# Bribing foreign officials
+
+country_event = {
+	id = gsg.5
+	title = "FLAVOR_DIPLO1_NAME"
+	desc = "FLAVOR_DIPLO_1_DESC"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_1_OPTIONA" # bribe foreign official
+		ai_chance = { factor = 80 }
+		add_dip_power = 30
+		add_years_of_income = -0.1
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_1_OPTIONB" # do without
+		ai_chance = { factor = 20 }
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = uncooperative_officials
+			}
+		}
+	}
+}
+
+# Foreign Prince samples our wine
+
+province_event = {
+	id = gsg.6
+	title = "FLAVOR_DIPLO_2_NAME"
+	desc = "FLAVOR_DIPLO_2_DESC"
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		trade_goods = wine
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_2_OPTIONA"
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = imported_wine
+			}
+		}
+		owner = { add_prestige = 5 }
+	}
+}
+
+# Our fur clothing are fashionable in foreign court
+
+province_event = {
+	id = gsg.7
+	title = "FLAVOR_DIPLO_3_NAME"
+	desc = "FLAVOR_DIPLO_3_DESC"
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		trade_goods = fur
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_3_OPTIONA"
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = fashionable_fur
+			}
+		}
+		owner = { add_prestige = 10 }
+	}
+}
+
+# Slave trade deal established
+
+province_event = {
+	id = gsg.8
+	title = "FLAVOR_DIPLO_4_NAME"
+	desc = "FLAVOR_DIPLO_4_DESC"
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+		trade_goods = slaves
+		NOT = {
+			owner = { has_country_modifier = the_abolish_slavery_act }
+		}
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+			NOT = {
+				has_country_modifier = the_abolish_slavery_act
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_4_OPTIONA"
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+				NOT = {
+					has_country_modifier = the_abolish_slavery_act
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = slave_imports
+			}
+		}
+		owner = { add_years_of_income = 0.1 }
+	}
+}
+
+# New street in foreign capital named after you
+
+country_event = {
+	id = gsg.9
+	title = "FLAVOR_DIPLO_5_NAME"
+	desc = "FLAVOR_DIPLO_5_DESC"
+	picture = CITY_VIEW_eventPicture
+
+	trigger = {
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+			is_lesser_in_union = no
+		}
+		has_heir = yes
+		is_lesser_in_union = no
+	}
+
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = eponymous_street
+			}
+		}
+	
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_5_OPTIONA" # name after me
+		ai_chance = { factor = 50 }
+		add_dip_power = 30
+		add_prestige = 10
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_5_OPTIONB" # name after heir
+		ai_chance = { factor = 50 }
+		add_dip_power = 30
+		add_heir_claim = 30
+	}
+}
+
+# State visit
+
+country_event = {
+	id = gsg.10
+	title = "FLAVOR_DIPLO_6_NAME"
+	desc = "FLAVOR_DIPLO_6_DESC"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+			has_regency = no
+			NOT = {
+				is_lesser_in_union = yes
+			}
+		}
+		has_regency = no
+		NOT = {
+			is_lesser_in_union = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			dip = 3
+		}
+		modifier = {
+			factor = 0.9
+			dip = 4
+		}
+		modifier = {
+			factor = 0.9
+			dip = 5
+		}
+		modifier = {
+			factor = 0.9
+			dip = 6
+		}
+		modifier = {
+			factor = 0.9
+			advisor = diplomat
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_6_OPTIONA"
+		add_legitimacy = 10
+		add_prestige = 10
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+				}
+				has_regency = no
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = state_visit
+			}
+		}
+	}
+}
+
+# Language barrier
+
+country_event = {
+	id = gsg.11
+	title = "FLAVOR_DIPLO_7_NAME"
+	desc = "FLAVOR_DIPLO_7_DESC"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+			NOT = { culture_group = ROOT }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 5 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 6 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { advisor = diplomat }
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_7_OPTIONA"
+		add_prestige = -5
+		add_country_modifier = {
+			name = "diplomacy_cockup"
+			duration = 1825
+		}
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = improved_relation
+				}
+				NOT = { culture_group = ROOT }
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = linguistic_faux_pas
+			}
+		}
+	}
+}
+
+# Drunk diplomat proposes to foreign princess
+country_event = {
+	id = gsg.12
+	title = "FLAVOR_DIPLO_8_NAME"
+	desc = "FLAVOR_DIPLO_8_DESC"
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		any_country = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = improved_relation
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3650
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 5 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { dip = 6 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { advisor = diplomat }
+		}
+	}
+	
+	option = {
+		name = "FLAVOR_DIPLO_8_OPTIONA"
+		add_prestige = -20
+		random_country = {
+			limit = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = improved_relation
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = adultery_scandal
+			}
+		}
+	}
+}
+
+#RIP Byzantium
+country_event = {
+	id = gsg.13
+	title = "END_OF_BYZANTIUM_TITLE"
+	desc = "END_OF_BYZANTIUM_DESC"
+	picture = BYZANTINE_EAGLE_eventPicture
+	
+	trigger = {
+		NOT = { ROOT = { has_country_flag = defend_kebab } }
+		culture_group = turko_semitic
+		NOT = { exists = BYZ }
+		NOT = {
+			151 = { #Constantinople isn't greek
+				culture = greek
+			}
+		}
+		owns = 151
+	}	
+	mean_time_to_happen = {
+		months = 2
+	}	
+	option = {
+		name = "END_OF_BYZANTIUM_OPTION"
+		hidden_effect = {
+			every_province = {
+				limit = { is_core = BYZ }
+				remove_core = BYZ
+			}
+			every_province = {
+				limit = {
+					region = greece_region
+				}
+				add_core = GRE
+			}
+		}
+		TUR = {
+			set_country_flag = defend_kebab
+		}
+	}
+}
+
+#Demotes Empires with less than 30 provinces (except Byzantium)
+country_event = {
+	id = gsg.14
+	title = "END_OF_EMPIRE_TITLE"
+	desc = "END_OF_EMPIRE_DESC"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		NOT = { tag = BYZ }
+		OR = {
+			government = imperial_government
+			government = modern_empire
+		}
+		NOT = { num_of_cities = 30 }		
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "END_OF_EMPIRE_A"
+		add_stability = -1
+		add_prestige = -30
+		if = {
+			limit = {
+				NOT = { is_year = 1500 }
+			}
+			change_government = feudal_monarchy
+		}
+		if = {
+			limit = {
+				is_year = 1500
+				NOT = { is_year = 1600 }
+			}
+			change_government = administrative_monarchy
+		}
+		if = {
+			limit = {
+				is_year = 1600
+				NOT = { is_year = 1700 }
+			}
+			change_government = absolute_monarchy
+		}
+		if = {
+			limit = {
+				is_year = 1700
+				NOT = { is_year = 1800 }
+			}
+			change_government = constitutional_monarchy
+		}
+		if = {
+			limit = {
+				is_year = 1800
+			}
+			change_government = enlightened_despotism
+		}
+	}
+}
+
+#The Khan of Khans
+country_event = {
+            id = gsg.15
+            title = "HORDE_VASSAL_OFFER_SEND_TITLE"
+            desc = "HORDE_VASSAL_OFFER_SEND_DESC"
+            picture = HORDE_ON_HORSEBACK_eventPicture
+           
+            trigger = {
+                    NOT = { tag = GTY }
+					NOT = { tag = TIM }
+                    exists = GTY
+					is_neighbor_of = GTY
+                    government = steppe_horde
+                    is_lesser_in_union = no
+                    is_at_war = no
+                    NOT = { has_country_flag = steppe_vassal_offer_sent }
+            }
+            mean_time_to_happen = {
+                    months = 3
+            }
+            option = {
+                    name = "HORDE_VASSAL_OFFER_SEND_A"
+                    add_prestige = -10
+                    add_treasury = -100
+                    GTY = {
+                            country_event = {
+                                    id = gsg.16
+                                    days = 1
+                                    random = 1
+                            }
+                    }
+                    set_country_flag = steppe_vassal_offer_sent
+                    ai_chance = { factor = 100 }
+            }
+            option = {
+                    name = "HORDE_VASSAL_OFFER_SEND_B"
+                    add_prestige = 10
+                    ai_chance = { factor = 0 }
+                    set_country_flag = steppe_vassal_offer_sent
+            }
+}
+
+#Nomad bows down to Khagan
+country_event = {
+	id = gsg.16
+	title = "HORDE_VASSAL_OFFER_RECEIVE_TITLE"
+	desc = "HORDE_VASSAL_OFFER_RECEIVE_DESC"
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "HORDE_VASSAL_OFFER_RECEIVE_A"
+		add_treasury = 100
+		vassalize = FROM
+		custom_tooltip = KHANTOOLTIP2
+		change_variable = { which = "khan_harem" value = 1 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "HORDE_VASSAL_OFFER_RECEIVE_B"
+		add_treasury = 100
+		ai_chance = { factor = 1 }
+	}
+}
+
+#New Khagan
+country_event = {
+	id = gsg.17
+	title = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_TITLE"
+	desc = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_DESC"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GTY
+		government = khaganate
+		is_female = no
+	}
+	
+	option = {
+		name = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_OPTA"
+		set_variable = { which = "khan_harem" value = 0 } #reset
+		hidden_effect = {
+			every_country = {
+				limit = { vassal_of = GTY }
+				country_event = { id = gsg.18 }
+			}
+		}
+	}
+}
+
+#New Wives
+country_event = {
+	id = gsg.18
+	title = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_TWO_TITLE"
+	desc = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_TWO_DESC"
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "TATARY_VASSAL_SENDS_WIFES_TO_NEW_KHAGAN_TWO_OPTA"
+		GTY = { change_variable = { which = "khan_harem" value = 1 } }
+	}
+}
+
+country_event = {
+	id = gsg.19
+	title = "CULT_COMET_TITLE"
+	desc = "CULT_COMET_DESC"
+	picture = COMET_SIGHTED_eventPicture
+
+	trigger = {
+		government = religious_cult
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+
+	option = {
+		name = "CULT_COMET_A"		# It's a blessing!
+		add_stability = 1
+	}	
+}
+
+#convert to religion of whoever dominates trade node (coastal provinces)
+province_event = {
+	id = gsg.20
+	title = "TRADE_RELIGION_PORT_SPREAD_TITLE"
+	desc = "TRADE_RELIGION_PORT_SPREAD_DESC"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		is_capital = no
+		has_port = yes
+		strongest_trade_power = {
+			NOT = { religion = PREV }
+			NOT = { religion = owner }
+			NOT = { technology_group = ROOT }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+		modifier = {
+			factor = 2
+			owner = { full_idea_group = religious_ideas }
+		}
+		modifier = {
+			factor = 5
+			owner = { government = theocracy }
+		}
+		modifier = {
+			factor = 3
+			owner = { has_idea_group = isolationist_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { full_idea_group = plutocracy_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { full_idea_group = trade_ideas }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 0 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = -1 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = -2 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { religious_unity = 0.75 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { religious_unity = 0.5 } }
+		}
+	}
+	
+	option = {
+		name = "TRADE_RELIGION_INLAND_SPREAD_A"
+		
+		strongest_trade_power = {
+			ROOT = {
+				change_religion = PREV
+			}
+		}
+	}
+}
+
+#convert to religion of whoever dominates trade node (inland provinces)
+province_event = {
+	id = gsg.21
+	title = "TRADE_RELIGION_INLAND_SPREAD_TITLE"
+	desc = "TRADE_RELIGION_INLAND_SPREAD_DESC"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		is_capital = no
+		has_port = no
+		any_neighbor_province = {
+			NOT = { is_strongest_trade_power = ROOT }
+			any_trade_node_member_province = {
+				province_id = ROOT #makes sure weird edge cases don't happen with node borders
+			}
+			strongest_trade_power = {
+				religion = PREV
+			}
+		}
+		strongest_trade_power = {
+			NOT = { religion = PREV }
+			NOT = { religion = owner }
+			NOT = { technology_group = ROOT }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1500
+		modifier = {
+			factor = 2
+			owner = { full_idea_group = religious_ideas }
+		}
+		modifier = {
+			factor = 5
+			owner = { government = religion }
+		}
+		modifier = {
+			factor = 3
+			owner = { has_idea_group = isolationist_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { full_idea_group = plutocracy_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { full_idea_group = trade_ideas }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 0 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = -1 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = -2 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { religious_unity = 0.75 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { religious_unity = 0.5 } }
+		}
+	}
+	
+	option = {
+		name = "TRADE_RELIGION_INLAND_SPREAD_A"
+		
+		strongest_trade_power = {
+			ROOT = {
+				change_religion = PREV
+			}
+		}
+	}
+}
+
+#Roman Empire isn't an Empire
+country_event = {
+	id = gsg.22
+	title = THIS_IS_AN_AI_EVENT_TITLE
+	desc = THIS_IS_AN_AI_EVENT_DESC
+	picture = HRE_eventPicture #Fuck you, Byzantium used Double-headed eagles before them!
+	
+	trigger = {
+		ai = yes
+		tag = BYZ
+		NOT = { government = imperial_government }
+		NOT = { government = modern_empire }
+		NOT = { government = revolutionary_empire }
+		government = monarchy
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		if = {
+			limit = { NOT = { adm_tech = 22 } }
+			change_government = imperial_government
+		}
+		if = {
+			limit = { adm_tech = 22 }
+			change_government = modern_empire
+		}
+		add_legitimacy = 50
+	}
+}
+
+#Roman Empire isn't a monarchy, time for Greece
+country_event = {
+	id = gsg.23
+	title = THIS_IS_AN_AI_EVENT_TITLE
+	desc = THIS_IS_AN_AI_EVENT_DESC
+	picture = HRE_eventPicture #Fuck you, Byzantium used Double-headed eagles before them!
+	
+	trigger = {
+		ai = yes
+		tag = BYZ
+		NOT = { exists = GRE }
+		NOT = { government = monarchy }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		change_tag = GRE
+		GRE = {
+			every_province = {
+				limit = { 
+					NOT = { owned_by = THIS }
+					region = greece_region 
+				}
+				add_claim = GRE
+			}
+		}
+	}
+}
+
+#Teutonic Order to Teutonia via rebels
+country_event = {
+	id = gsg.24
+	title = gsg.24.t
+	desc = gsg.24.d
+	
+	trigger = {
+		tag = TEU
+		NOT = { government = theocratic_government }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = gsg.24.opta
+		change_tag = TTN
+		TTN = {
+			every_province = {
+				limit = { region = wielkopolska }
+				add_core = TTN
+			}
+		}
+	}
+}
+
+#Livonia to Latvia/Estonia via rebels
+country_event = {
+	id = gsg.25
+	title = gsg.24.t
+	desc = gsg.24.d
+	
+	trigger = {
+		tag = LIV
+		NOT = { government = theocratic_government }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = gsg.24.opta
+		if = {
+			limit = { capital_scope = { culture = estonian } }
+			change_tag = EST
+			if = {
+				limit = { NOT = { primary_culture = latvian } }
+				change_primary_culture = latvian
+			}
+		}
+		if = {
+			limit = { capital_scope = { NOT = { culture = estonian } } }
+			change_tag = LAT
+			if = {
+				limit = { NOT = { primary_culture = latvian } }
+				change_primary_culture = latvian
+			}
+		}
+	}
+}
+
+#Knights to Rhodes via rebels
+country_event = {
+	id = gsg.26
+	title = gsg.24.t
+	desc = gsg.24.d
+	
+	trigger = {
+		tag = KNI
+		NOT = { government = theocratic_government }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = gsg.24.opta
+		change_tag = RHO
+		if = {
+			limit = { 
+				NOT = { religion = orthodox }
+				capital_scope = { religion = orthodox } 
+			}
+			change_religion = orthodox
+		}
+		if = {
+			limit = { 
+				NOT = { primary_culture = greek }
+				capital_scope = { culture = greek } 
+			}
+			change_primary_culture = greek
+		}
+	}
+}
+
+#Treaty of Gaeta
+country_event = {
+	id = gsg.27
+	title = gsg.27.t
+	desc = gsg.27.d
+	
+	is_triggered_only = yes
+	
+	immediate = { set_global_flag = treaty_of_gaeta }
+	
+	option = {
+		name = gsg.27.opta
+		vassalize = ALB
+		ALB = {
+			white_peace = TUR
+			change_religion = ROOT
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = {
+		name = gsg.27.optb
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+#Albania goes to Naples if PU with Aragon breaks
+country_event = {
+	id = gsg.28
+	title = gsg.28.t
+	desc = gsg.28.d
+	
+	trigger = {
+		tag = ARA
+		ALB = { 
+			vassal_of = ARA 
+			is_at_war = no
+		}
+		NOT = { senior_union_with = NAP }
+		exists = NAP
+		NOT = { has_global_flag = albania_to_naples }
+	}
+	
+	immediate = { set_global_flag = albania_to_naples }
+	
+	option = {
+		name = gsg.27.opta
+		NAP = { vassalize = ALB }
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+
+#Fix that shit, Paradox
+country_event = {
+	id = gsg.29
+	title = paradox_fix_that_shit_title
+	desc = paradox_fix_that_shit_desc
+	trigger = {
+		tag = LOR
+		is_vassal = yes
+		NOT = { is_subject_of = PRO }
+		has_ruler = "René I"
+	}
+	
+	option = {
+		name = paradox_fix_that_shit_opta
+		define_ruler = {
+			dynasty = "de Vaudémont"
+		}
+		define_heir = {
+			dynasty = "de Vaudémont"
+		}
+	}
+}
+
+#checks for adjacent colonial nations to get annexed (event for AI colonial state)
+
+country_event = {
+	id = gsg.30
+	title = THIS_IS_AN_AI_EVENT_TITLE
+	desc = THIS_IS_AN_AI_EVENT_DESC
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		ai = yes
+		is_colonial_nation = yes
+		any_country = {
+			overlord_of = ROOT
+			is_neighbor_of = ROOT
+			any_owned_province = {
+				is_overseas = no
+				any_neighbor_province = {
+					owned_by = ROOT
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = THIS_IS_AN_AI_EVENT_TITLE
+		random_country = { 
+			limit = {
+				overlord_of = ROOT
+				is_neighbor_of = ROOT
+			}
+			country_event = {
+				id = gsg.31
+				days = 1
+				random = 1
+			}
+		}		 
+	}
+}
+
+#event for overlord to actually annex
+
+country_event = {
+	id = gsg.31
+	title = ADJACENT_COLONY_ANNEX_TITLE
+	desc = ADJACENT_COLONY_ANNEX_DESC
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ADJACENT_COLONY_ANNEX_OPTION
+		inherit = FROM
+	}	
+}
+
+####excolony genocide event chain:####
+
+#euro flogs native in public
+country_event = {
+	id = gsg.32
+	title = COLONY_GENOCIDE_1_TITLE
+	desc = COLONY_GENOCIDE_1_DESC
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		NOT = { dominant_culture = ROOT }
+		is_former_colonial_nation = yes
+		NOT = { has_country_flag = 32_done }
+	}
+	
+	mean_time_to_happen = {
+		months = 250
+	}
+	
+	option = {
+		name = COLONY_GENOCIDE_1_OPTION_A
+		set_country_flag = 32_done
+		add_legitimacy = 5
+		every_owned_province = {
+			limit = {
+				NOT = { culture = ROOT }
+			}
+			add_province_modifier = {
+				name = strict_native_discipline_province
+				duration = 1825
+			}
+		}
+		add_country_modifier = {
+			name = strict_native_discipline_country
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = COLONY_GENOCIDE_1_OPTION_B
+		set_country_flag = 32_done
+		add_prestige = -10
+		every_owned_province = {
+			limit = {
+				NOT = { culture = ROOT }
+			}
+			add_province_modifier = {
+				name = lax_native_discipline_province
+				duration = 1825
+			}
+		}
+		add_country_modifier = {
+			name = lax_native_discipline_country
+			duration = 1825
+		}
+	}
+}

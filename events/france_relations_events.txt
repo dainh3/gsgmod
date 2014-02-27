@@ -1,0 +1,306 @@
+#################
+#France Relations
+#################
+namespace = faction_relations
+
+#Vassal loves you and sends something
+country_event = {
+	id = faction_relations.3
+	title = FACTION_RELATIONS_3_TITLE
+	desc = FACTION_RELATIONS_3_DESC
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		FRA = { has_factions = yes }
+		vassal_of = FRA
+		capital_scope = { region = french_region } #Only real "french" vassals
+		has_opinion = { who = FRA value = 100 }
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.9
+			FRA = { has_idea_group = aristocracy_ideas }
+		}
+		modifier = {
+			factor = 0.9
+			has_opinion = { who = FRA value = 150 }
+		}
+		modifier = {
+			factor = 0.9
+			aristocracy_ideas = 3
+		}
+	}
+	
+	option = {
+		name = FACTION_RELATIONS_3_OPTA
+		random_list = {
+			59 = { FRA = { country_event = { id = faction_relations.4 days = 7 } } }
+			20 = { FRA = { country_event = { id = faction_relations.5 days = 7 } } }
+			20 = { FRA = { country_event = { id = faction_relations.6 days = 7 } } }
+			1 = { FRA = { country_event = { id = faction_relations.7 days = 7 } } }
+		}
+	}
+}
+
+#Vassal sends money
+country_event = {
+	id = faction_relations.4
+	title = GIFT_FROM_OUR_VASSALS
+	desc = FACTION_RELATIONS_4_DESC
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = FACTION_RELATIONS_4_OPTA
+		add_opinion = { who = FROM modifier = opinion_pleased }
+		add_years_of_income = 0.25
+	}
+}
+
+#Vassal sends a military man
+country_event = {
+	id = faction_relations.5
+	title = GIFT_FROM_OUR_VASSALS
+	desc = FACTION_RELATIONS_5_DESC
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #Refuse it
+		name = FACTION_RELATIONS_5_OPTA
+		create_general = 15
+		add_opinion = { who = FROM modifier = opinion_pleased }
+		add_army_tradition = 2
+	}
+}
+
+#Vassal sends a statue
+country_event = {
+	id = faction_relations.6
+	title = GIFT_FROM_OUR_VASSALS
+	desc = FACTION_RELATIONS_6_DESC
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FACTION_RELATIONS_6_OPTA
+		add_opinion = { who = FROM modifier = opinion_pleased }
+		add_prestige = 10
+		add_legitimacy = 10
+	}
+}
+
+#Vassal gives stab
+country_event = {
+	id = faction_relations.7
+	title = GIFT_FROM_OUR_VASSALS
+	desc = FACTION_RELATIONS_7_DESC
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = FACTION_RELATIONS_7_OPTA
+		add_opinion = { who = FROM modifier = opinion_pleased }
+		add_stability = 1
+	}
+}
+
+#Vassal dislikes you
+country_event = {
+	id = faction_relations.8
+	title = THIS_IS_AN_AI_EVENT_TITLE
+	desc = THIS_IS_AN_AI_EVENT_DESC
+	trigger = {
+		ai = yes
+		FRA = { 
+			has_factions = yes 
+			NOT = { has_country_modifier = fra_decentralized_state }
+			NOT = { has_country_modifier = fra_infuriated_nobles }
+			NOT = { has_country_modifier = aristocracy_modifier }
+			NOT = { has_country_modifier = serfdom_modifier }
+			NOT = { aristocracy_ideas = 3 }
+		}
+		vassal_of = FRA
+		capital_scope = { region = french_region } #Only real "french" vassals
+		NOT = { has_opinion = { who = FRA value = 100 } }
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.9
+			NOT = { has_opinion = { who = FRA value = 0 } }
+		}
+	}
+	
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		trigger = {
+			has_opinion = { who = FRA value = 70 }
+		}
+		FRA = { country_event = { id = faction_relations.9 days = 3 } }
+	}
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		trigger = {
+			NOT = { has_opinion = { who = FRA value = 70 } }
+			has_opinion = { who = FRA value = 50 }
+		}
+		FRA = { country_event = { id = faction_relations.10 days = 3 } }
+	}
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		trigger = {
+			NOT = { has_opinion = { who = FRA value = 50 } }
+			has_opinion = { who = FRA value = 30 }
+		}
+		FRA = { country_event = { id = faction_relations.11 days = 3 } }
+	}
+	option = {
+		name = THIS_IS_AN_AI_EVENT_OPT
+		trigger = {
+			NOT = { has_opinion = { who = FRA value = 30 } }
+		}
+		FRA = { country_event = { id = faction_relations.12 days = 3 } }
+	}
+	
+}
+
+#Vassal asks for money to improve opinion
+country_event = {
+	id = faction_relations.9
+	title = FACTION_RELATIONS.9_TITLE
+	desc = FACTION_RELATIONS.9_DESC
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FACTION_RELATIONS.9_OPTA
+		add_years_of_income = -0.4
+		FROM = { add_opinion = { who = ROOT modifier = opinion_pleased } }
+	}
+	
+	option = {
+		name = FACTION_RELATIONS.9_OPTB
+		add_prestige = -10
+		FROM = { add_opinion = { who = ROOT modifier = opinion_mildly_displeased } }
+	}
+}
+
+#Vassal asks for lessening on taxes
+country_event = {
+	id = faction_relations.10
+	title = FACTION_RELATIONS.9_TITLE
+	desc = FACTION_RELATIONS.9_DESC
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FACTION_RELATIONS.9_OPTA
+		add_country_modifier = {
+			name = fra_decentralized_state
+			duration = 1825
+		}
+		FROM = { 
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased 
+			}
+		}
+	}
+
+	option = {
+		name = FACTION_RELATIONS.9_OPTB
+		add_prestige = -15
+		FROM = { add_opinion = { who = ROOT modifier = opinion_mildly_displeased } }
+	}
+}
+
+#Vassal asks for Serfdom
+country_event = {
+	id = faction_relations.11
+	title = FACTION_RELATIONS.11_TITLE
+	desc = FACTION_RELATIONS.11_DESC
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FACTION_RELATIONS.11_OPTA
+		add_country_modifier = {
+			name = aristocracy_modifier
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = serfdom_modifier
+			duration = 1825
+		}
+		FROM = { add_opinion = { who = ROOT modifier = opinion_pleased } }
+	}
+
+	option = {
+		name = FACTION_RELATIONS.11_OPTB
+		capital_scope = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+				friend = FROM
+			}
+		}
+		add_country_modifier = {
+			name = fra_infuriated_nobles
+			duration = 730
+		}
+		add_prestige = -20
+		FROM = { add_opinion = { who = ROOT modifier = opinion_mildly_displeased } }
+	}
+}
+
+#Vassal asks for more Serfdom
+country_event = {
+	id = faction_relations.12
+	title = FACTION_RELATIONS.12_TITLE
+	desc = FACTION_RELATIONS.12_DESC
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FACTION_RELATIONS.12_OPTA
+		add_country_modifier = {
+			name = aristocracy_modifier
+			duration = 7300
+		}
+		add_country_modifier = {
+			name = serfdom_modifier
+			duration = 3650
+		}
+		FROM = { add_opinion = { who = ROOT modifier = opinion_pleased } }
+	}
+
+	option = {
+		name = FACTION_RELATIONS.12_OPTB
+		capital_scope = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+				friend = FROM
+			}
+		}
+		add_country_modifier = {
+			name = fra_infuriated_nobles
+			duration = 1825
+		}
+		add_legitimacy = -20
+		add_prestige = -20
+		add_stability = -1
+		FROM = { add_opinion = { who = ROOT modifier = opinion_mildly_displeased } }
+	}
+}

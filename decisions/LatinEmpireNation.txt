@@ -1,0 +1,55 @@
+country_decisions = {
+	form_latin_empire = {
+		major = yes
+		potential = {
+			NOT = { exists = LTE }
+			NOT = { tag = BYZ }
+			NOT = { tag = PAP }
+			NOT = { tag = ITA }
+			NOT = { tag = HLR }
+			NOT = { tag = LTH }
+			OR = {
+				culture_group = latin
+				culture_group = french
+			}
+			owns = 151
+		}
+		allow = {
+			has_regency = no
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			greece_region = {
+				limit = { 
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = LTE
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { adm_tech = 22 }
+				change_government = modern_empire
+			}
+			if = {
+				limit = { NOT = { adm_tech = 22 } }
+				change_government = imperial_government
+			}
+			change_tag = LTE
+			LTE = {
+				set_capital = 151
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				government = republic
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+country_decisions = {
+
+	malayan_nation = {
+		major = yes
+		potential = {
+			NOT = { exists = MSA }
+			NOT = { technology_group = nomad_group }
+			OR = {
+				culture_group = malay
+				AND = {
+					OR = {
+						is_colonial_nation = yes
+						is_former_colonial_nation = yes
+					}
+					colonial_indonesia = {
+						owned_by = ROOT
+					}
+				}
+			}
+			NOT = { technology_group = nomad_group }
+		}
+		allow = {
+			is_subject = no
+			is_at_war = no
+			owns = 624
+			owns = 625
+			owns = 629
+			owns = 630
+			OR = {
+				AND = {
+					owns = 595
+					owns = 598
+					owns = 596
+					owns = 597
+					owns = 617
+					owns = 618
+					owns = 619
+					owns = 620
+					owns = 621
+					owns = 622
+					owns = 623
+					owns = 659
+				}
+				AND = {
+					owns = 595
+					owns = 598
+					owns = 596
+					owns = 597
+					owns = 637
+					owns = 636
+					owns = 638
+					owns = 640
+					owns = 639
+				}
+				AND = {
+					owns = 637
+					owns = 636
+					owns = 638
+					owns = 640
+					owns = 639
+					owns = 617
+					owns = 618
+					owns = 619
+					owns = 620
+					owns = 621
+					owns = 622
+					owns = 623
+					owns = 659
+				}
+			}
+		}
+		effect = {
+			MSA = {
+				add_claim = 624
+				add_claim = 625
+				add_claim = 629
+				add_claim = 630
+				add_claim = 595
+				add_claim = 598
+				add_claim = 596
+				add_claim = 597
+				add_claim = 617
+				add_claim = 618
+				add_claim = 619
+				add_claim = 620
+				add_claim = 621
+				add_claim = 622
+				add_claim = 623
+				add_claim = 659
+				add_claim = 637
+				add_claim = 636
+				add_claim = 638
+				add_claim = 640
+				add_claim = 639
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_prestige = 25
+			change_tag = MSA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
