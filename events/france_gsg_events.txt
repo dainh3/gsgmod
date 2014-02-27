@@ -8,7 +8,7 @@ namespace = french_flavor
 #############
 #French Flavor
 #############
-#Anne of France
+#Anne de Beaujeu
 country_event = {
 	id = french_flavor.2
 	title = fflavor.2.title
@@ -17,9 +17,9 @@ country_event = {
 	
 	trigger = {
 		tag = FRA
-		has_ruler = "(Regent) Anne"
-		has_country_flag = had_fflavor_0
+		has_ruler = "Anne de Beaujeu"
 		heir_age = 15
+		NOT = { has_country_flag = had_fflavor_2 }
 	}
 	
 	mean_time_to_happen = {
@@ -70,8 +70,10 @@ country_event = {
 	trigger = {
 		tag = FRA
 		is_year = 1585
-		NOT = { has_country_modifier = dime }
+		NOT = { has_country_flag = had_fflavor_3 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_3 }
 	
 	mean_time_to_happen = {
 		days = 1
@@ -106,7 +108,7 @@ country_event = {
 			AND = {
 				OR = {
 					has_ruler = "Anne I"
-					has_ruler = "(Regent) Anne"
+					has_ruler = "Anne de Beaujeu"
 				}
 				has_female_heir = no
 			}
@@ -153,7 +155,7 @@ country_event = {
 		FRA = { has_heir = no }
 		is_year = 1488
 		NOT = { is_year = 1515 }
-		NOT = { has_country_flag = had_fflavor_4 }
+		NOT = { has_country_flag = had_fflavor_5 }
 	}
 	
 	immediate = { set_country_flag = had_fflavor_5 }
@@ -182,15 +184,15 @@ country_event = {
 	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	trigger = {
-		has_ruler = "(Regent) Anne"
+		has_ruler = "Anne de Beaujeu"
 		NOT = { heir_age = 15 }
 		ORL = {
 			has_ruler = "Louis II"
 		}
-		NOT = { has_global_flag = had_ff_6 }
+		NOT = { has_country_flag = had_fflavor_6 }
 	}
 	
-	immediate = { set_global_flag = had_ff_6 }
+	immediate = { set_country_flag = had_fflavor_6 }
 	
 	option = {
 		name = fflavor.6.opta
@@ -229,7 +231,10 @@ country_event = {
 				is_year = 1515
 			}
 		}
+		NOT = { has_country_flag = had_fflavor_7 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_7 }
 	
 	mean_time_to_happen = {
 		days = 1
@@ -268,17 +273,17 @@ country_event = {
 		}
 		FRA = {
 			is_neighbor_of = BRI
-			has_ruler = "(Regent) Anne"
+			has_ruler = "Anne de Beaujeu"
 			has_country_flag = declined_regent_louis
 		}
-		NOT = { has_country_flag = had_fflavor_9 }
+		NOT = { has_country_flag = had_fflavor_8 }
 	}
 
 	mean_time_to_happen = {
 		months = 24
 	}
 	
-	immediate = { set_country_flag = had_fflavor_9 }
+	immediate = { set_country_flag = had_fflavor_8 }
 	
 	option = {
 		name = fflavor.8.opta
@@ -367,7 +372,11 @@ country_event = {
 		junior_union_with = AUV
 		is_year = 1563
 		heir_age = 15
+		NOT = { has_country_flag = had_fflavor_11 }
+		NOT = { has_country_flag = catherine_wont_die }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_11 }
 
 	mean_time_to_happen = {
 		days = 1
@@ -400,7 +409,10 @@ country_event = {
 		}
 		junior_union_with = AUV
 		is_year = 1563
+		NOT = { has_country_flag = had_fflavor_10 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_10 }
 
 	mean_time_to_happen = {
 		days = 1
@@ -423,7 +435,10 @@ country_event = {
 		tag = FRA
 		has_ruler = "Marie (Regent)"
 		heir_age = 15
+		NOT = { has_country_flag = had_fflavor_12 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_12 }
 
 	mean_time_to_happen = {
 		days = 1
@@ -450,7 +465,10 @@ country_event = {
 		tag = FRA
 		has_ruler = "Anne (Regent)"
 		heir_age = 15
+		NOT = { has_country_flag = had_fflavor_13 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_13 }
 
 	mean_time_to_happen = {
 		days = 1
@@ -477,7 +495,10 @@ country_event = {
 		tag = FRA
 		has_ruler = "Philippe (Regent)"
 		heir_age = 15
+		NOT = { has_country_flag = had_fflavor_14 }
 	}
+	
+	immediate = { set_country_flag = had_fflavor_14 }
 
 	mean_time_to_happen = {
 		days = 1
@@ -489,6 +510,116 @@ country_event = {
 		hidden_effect = {
 			kill_ruler = yes
 			add_stability = 1
+		}
+	}
+}
+
+#In case Louis XIII dies before he comes to age
+country_event = {
+	id = french_flavor.15
+	title = fflavor.15.t
+	desc = fflavor.15.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_ruler = "Anne (Regent)"
+		NOT = { has_country_flag = had_fflavor_15 }
+	}
+	
+	immediate = { set_country_flag = had_fflavor_15	}
+	
+	option = {
+		name = fflavor.15.opta
+		define_ruler = {
+			dynasty = "de Bourbon"
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = fflavor.15.optb
+		add_stability = -3
+		add_legitimacy = -100
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				marriage_with = HAB
+				HAB = {
+					dynasty = ROOT
+				}
+			}
+			modifier = {
+				factor = 0
+				is_rival = HAB
+				HAB = {
+					dynasty = ROOT
+				}
+			}
+		}
+	}
+}
+
+#In case Charles IX dies while Catherine's reign
+country_event = {
+	id = french_flavor.16
+	title = fflavor.16.t
+	desc = fflavor.16.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = AUV
+		has_ruler = "Cathérine I"
+		has_heir = no
+		senior_union_with = FRA
+		NOT = { has_country_flag = catherine_wont_die }
+	}
+	
+	option = {
+		name = fflavor.16.opta
+		trigger = {
+			NOT = { has_country_flag = brought_henri_as_heir }
+		}
+		define_heir = {
+			name = "Henri"
+			claim = 95
+			adm = 5
+			dip = 1
+			mil = 1
+			dynasty = "de Valois"
+		}
+		set_country_flag = brought_henri_as_heir
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = fflavor.16.optb
+		trigger = {
+			has_country_flag = brought_henri_as_heir
+		}
+		define_heir = {
+			claim = 50
+			dynasty = "de Valois"
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	option = {
+		name = fflavor.16.optc
+		FRA = {
+			create_union = AUV
+			add_legitimacy = -30
+		}
+		set_country_flag = catherine_wont_die
+		ai_chance = {
+			factor = 10
 		}
 	}
 }
