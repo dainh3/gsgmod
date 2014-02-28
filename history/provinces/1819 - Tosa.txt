@@ -1,0 +1,27 @@
+#1819 - Tosa
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Nakamura"
+trade_goods = naval_supplies
+hre = no
+base_tax = 2
+manpower = 2
+citysize = 5234
+add_core = HSK
+fort1 = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+
+1490.1.1 = { add_core = CSK }
+1549.5.9 = { owner = CSK controller = CSK }
+1549.5.9 = { capital = "Oko" }
+1591.1.1 = { capital = "Urado" }
+1600.10.21 = { add_core = DTE owner = DTE controller = DTE remove_core = CSK }
+#Battle of Sekigahara
+1614.1.1 = { capital = "Uwajima" }

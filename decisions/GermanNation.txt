@@ -1,0 +1,63 @@
+country_decisions = {
+
+	german_nation = {
+		major = yes
+		potential = {
+			NOT = { exists = GER }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 5
+				}
+			}
+			culture_group = germanic
+		}
+		allow = {
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			government = monarchy
+			owns = 46	# Mecklenburg
+			owns = 50	# Brandenburg
+			owns = 52	# Altmark
+			owns = 53	# Lüneburg
+			owns = 57	# Hannover
+			owns = 58	# Anhalt
+			owns = 61	# Dresden
+			owns = 62	# Leipzig
+			owns = 63	# Erfurt
+			owns = 67	# Franken
+			is_core = 46	# Mecklenburg
+			is_core = 50	# Brandenburg
+			is_core = 52	# Altmark
+			is_core = 53	# Lüneburg
+			is_core = 57	# Hannover
+			is_core = 58	# Anhalt
+			is_core = 61	# Dresden
+			is_core = 62	# Leipzig
+			is_core = 63	# Erfurt
+			is_core = 67	# Franken
+		}
+		effect = {
+			german_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = GER
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			change_tag = GER
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

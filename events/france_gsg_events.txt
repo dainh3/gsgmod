@@ -1,0 +1,494 @@
+namespace = french_flavor
+######################################
+# Events for French Factions
+#Based on Chinese Factions events
+#If you want to use these below, you're free to use, they're copy-paste-change from ChineseFactions.txt from vanilla, so...
+######################################
+
+#############
+#French Flavor
+#############
+#Anne of France
+country_event = {
+	id = french_flavor.2
+	title = fflavor.2.title
+	desc = fflavor.2.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_ruler = "(Regent) Anne"
+		has_country_flag = had_fflavor_0
+		heir_age = 15
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { set_country_flag = had_fflavor_2 }
+	
+	option = {
+		name = fflavor.2.opta
+		custom_tooltip = fflavor_2_tooltip
+		hidden_effect = {
+			kill_ruler = yes
+			add_stability = 1
+		}
+		ai_chance = { factor = 95 }
+	}
+	option = {
+		name = fflavor.2.optb
+		define_ruler = {
+			name = "Anne I"
+			dynasty = ROOT
+			female = yes
+			birth_date = "1461.4.3"
+			adm = 6
+			dip = 3
+			mil = 2
+			#fixed = yes
+		}
+		add_legitimacy = -30
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 20
+				has_female_heir = yes
+			}
+		}
+	}
+}
+	
+#Dime
+country_event = {
+	id = french_flavor.3
+	title = fflavor.3.title
+	desc = fflavor.3.desc
+	picture = CITY_VIEW_eventPicture
+	
+	trigger = {
+		tag = FRA
+		is_year = 1585
+		NOT = { has_country_modifier = dime }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.3.opta
+		add_country_modifier = {
+			name = "dime"
+			duration = -1
+		}
+		ai_chance = { factor = 95 }
+	}
+	option = {
+		name = fflavor.3.optb
+		ai_chance = { factor = 5 }
+	}
+}
+
+#The French Wedding
+country_event = {
+	id = french_flavor.4
+	title = fflavor.4.title
+	desc = fflavor.4.desc
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_regency = no
+		OR = {
+			is_female = no
+			AND = {
+				OR = {
+					has_ruler = "Anne I"
+					has_ruler = "(Regent) Anne"
+				}
+				has_female_heir = no
+			}
+		}
+		BRI = { exists = yes }
+		BRI = {
+			is_lesser_in_union = no
+			is_subject = no
+			is_female = yes
+		}
+		NOT = { is_year = 1550 }
+		NOT = { has_country_flag = had_fflavor_4 }
+	}
+	
+	immediate = { set_country_flag = had_fflavor_4 }
+	
+	option = {
+		name = fflavor.4.opta
+		create_union = BRI
+		ai_chance = { factor = 95 }
+	}
+	option = {
+		name = fflavor.4.optb
+		add_prestige = -10
+	}
+}
+
+#Louis II of Orleans appears as an heir
+country_event = {
+	id = french_flavor.5
+	title = fflavor.5.title
+	desc = fflavor.5.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			ORL = { 
+				vassal_of = FRA
+				has_ruler = "Louis II"
+				NOT = { war_with = FRA }
+			}
+			owns = 184
+		}
+		FRA = { has_heir = no }
+		is_year = 1488
+		NOT = { is_year = 1515 }
+		NOT = { has_country_flag = had_fflavor_4 }
+	}
+	
+	immediate = { set_country_flag = had_fflavor_5 }
+
+	option = {
+		name = fflavor.5.opta
+		inherit = ORL
+		define_heir = {
+			name = "Louis"
+			dynasty = ROOT
+			birth_date = 1462.6.27
+			claim = 95
+			adm = 2
+			dip = 3
+			mil = 5
+			#fixed = yes
+		}
+	}
+}
+
+#Louis II appears as a Regent
+country_event = {
+	id = french_flavor.6
+	title = fflavor.6.t
+	desc = fflavor.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		has_ruler = "(Regent) Anne"
+		NOT = { heir_age = 15 }
+		ORL = {
+			has_ruler = "Louis II"
+		}
+		NOT = { has_global_flag = had_ff_6 }
+	}
+	
+	immediate = { set_global_flag = had_ff_6 }
+	
+	option = {
+		name = fflavor.6.opta
+		define_ruler = {
+			name = "(Regent) Louis II, Duke of Orleans"
+			dynasty = "de Valois"
+			adm = 2
+			dip = 3
+			mil = 5
+		}
+		add_ruler_modifier = { name = "regency_council" }
+	}
+	
+	option = {
+		name = fflavor.6.optb
+		add_prestige = 10
+		set_country_flag = declined_regent_louis
+	}
+}
+
+#Regency for Charles ends, Louis II-side
+country_event = {
+	id = french_flavor.7
+	title = fflavor.7.t
+	desc = fflavor.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_ruler = "(Regent) Louis II, Duke of Órleans"
+				heir_age = 15
+			}
+			AND = {
+				has_ruler = "(Regent) Louis II, Duke of Órleans"
+				is_year = 1515
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = fflavor.7.opta
+		hidden_effect = {
+			add_stability = 1
+			add_legitimacy = 100
+			kill_ruler = yes
+		}
+	}
+}
+
+#Louis II appears as rebel
+country_event = {
+	id = french_flavor.8
+	title = fflavor.8.t
+	desc = fflavor.8.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = ORL
+		ORL = { 
+			vassal_of = FRA 
+			is_at_war = no
+		}
+		exists = BRI
+		BRI = { 
+			NOT = {
+				war_with = FRA
+				truce_with = FRA
+			}
+			is_subject = no
+		}
+		FRA = {
+			is_neighbor_of = BRI
+			has_ruler = "(Regent) Anne"
+			has_country_flag = declined_regent_louis
+		}
+		NOT = { has_country_flag = had_fflavor_9 }
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = { set_country_flag = had_fflavor_9 }
+	
+	option = {
+		name = fflavor.8.opta
+		BRI = { country_event = { id = french_flavor.9 days = 7 } }
+		ai_chance = {
+			factor = 95
+		}
+	}
+	
+	option = {
+		name = fflavor.8.optb
+		add_prestige = 10
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+#Britanny receives Louis' offer
+country_event = {
+	id = french_flavor.9
+	title = fflavor.9.t
+	desc = fflavor.9.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = fflavor.9.opta
+		FRA = { country_event = { id = french_flavor.10 days = 10 } }
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
+		}
+	}
+	
+	option = {
+		name = fflavor.9.optb
+		add_prestige = 10
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+#France receives Louis and Britanny's war
+country_event = {
+	id = french_flavor.10
+	title = fflavor.10.t
+	desc = fflavor.10.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #Fuck you Paradox for not letting me make nations join a fucking coalition and having them declare separate wars
+		name = fflavor.10.opta
+		BRI = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_liberation
+			}
+		}
+		ORL = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_liberation
+			}
+		}
+	}
+}
+
+#Catherine - Death of Catherine
+country_event = {
+	id = french_flavor.11
+	title = fflavor.11.t
+	desc = fflavor.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		AUV = { ai = yes }
+		has_ruler = "Cathérine I"
+		junior_union_with = AUV
+		is_year = 1563
+		heir_age = 15
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.11.opta
+		custom_tooltip = fflavor_2_tooltip
+		hidden_effect = {
+			inherit = AUV
+			kill_ruler = yes
+			add_stability = 1
+			add_legitimacy = 100
+		}
+	}
+}
+
+#In case Catherine dies
+country_event = {
+	id = french_flavor.110
+	title = fflavor.11.t
+	desc = fflavor.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		AUV = { ai = yes }
+		NOT = {
+			has_ruler = "Cathérine I"
+		}
+		junior_union_with = AUV
+		is_year = 1563
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.11.opta
+		inherit = AUV
+	}
+}
+
+#Marie - Louis XIII's regency ends	
+country_event = {
+	id = french_flavor.12
+	title = fflavor.12.t
+	desc = fflavor.12.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_ruler = "Marie (Regent)"
+		heir_age = 15
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.12.opta
+		custom_tooltip = fflavor_2_tooltip
+		hidden_effect = {
+			kill_ruler = yes
+			add_stability = 1
+		}
+	}
+}
+
+#Anne - Louis XIV's regency ends
+country_event = {
+	id = french_flavor.13
+	title = fflavor.13.t
+	desc = fflavor.13.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_ruler = "Anne (Regent)"
+		heir_age = 15
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.13.opta
+		custom_tooltip = fflavor_2_tooltip
+		hidden_effect = {
+			kill_ruler = yes
+			add_stability = 1
+		}
+	}
+}
+
+#Philippe - Louis XV's regency ends
+country_event = {
+	id = french_flavor.14
+	title = fflavor.14.t
+	desc = fflavor.14.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = FRA
+		has_ruler = "Philippe (Regent)"
+		heir_age = 15
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = fflavor.14.opta
+		custom_tooltip = fflavor_2_tooltip
+		hidden_effect = {
+			kill_ruler = yes
+			add_stability = 1
+		}
+	}
+}

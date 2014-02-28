@@ -1,0 +1,306 @@
+country_decisions = {
+
+	licensing_of_the_press_act = {
+		potential = {
+			NOT = { has_country_modifier = the_licensing_of_the_press_act }
+			OR = {
+				technology_group = western
+				technology_group = eastern
+			}
+			is_year = 1439
+
+		}
+		allow = {
+			full_idea_group = aristocracy_ideas
+			adm = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = narrowminded_modifier
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = "the_licensing_of_the_press_act"
+				duration = -1
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tenures_abolition_act = {
+		potential = {
+			NOT = { has_country_modifier = the_tenures_abolition_act }
+			government = feudal_monarchy
+		}
+		allow = {
+			adm_tech = 4
+			full_idea_group = economic_ideas
+			full_idea_group = aristocracy_ideas
+			dip = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = innovative_modifier
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = "the_tenures_abolition_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	dissolution_act = {
+		potential = {
+			NOT = { has_country_modifier = the_dissolution_act }
+			government = monarchy
+			OR = {
+				technology_group = western
+				technology_group = eastern
+			}
+			adm_tech = 4
+		}
+		allow = {
+			full_idea_group = economic_ideas 
+			advisor = statesman
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_dissolution_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	statue_in_restraint_of_appeals = {
+		potential = {
+			NOT = { has_country_modifier = the_statue_in_restraint_of_appeals }
+			religion = catholic
+			exists = PAP
+			NOT = { tag = PAP }
+		}
+		allow = {
+			NOT = { PAP = { has_opinion = { who = root value = -50 } } }
+			adm = 2
+			mil = 2
+		}
+		effect = {
+			add_prestige = 10
+			add_reform_desire  = 0.01
+			every_neighbor_country = {
+				limit = { religion = catholic }
+				add_opinion = { who = ROOT modifier = opinion_demote_pope }
+			}
+			PAP = { add_opinion = { who = ROOT modifier = opinion_pope_realise_demotion } }
+			add_country_modifier = {
+				name = "the_statue_in_restraint_of_appeals"
+				duration = -1
+			}			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	witchcraft_act = {
+		potential = {
+			NOT = { has_country_modifier = the_witchcraft_act }
+			religion_group = christian
+			is_year = 1500
+			NOT = { is_year = 1700 }
+		}
+		allow = {
+			full_idea_group = religious_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = narrowminded_modifier
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = "the_witchcraft_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	education_act = {
+		potential = {
+			has_country_modifier = the_school_establishment_act
+			NOT = { has_country_modifier = the_education_act }
+			religion_group = christian
+		}
+		allow = {
+			statesman = 3
+			full_idea_group = innovativeness_ideas
+			adm = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = innovative_modifier
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = "the_education_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	abolish_slavery_act = {
+		potential = {
+			NOT = { has_country_modifier = the_abolish_slavery_act }
+			slaves = 1
+			is_year = 1700
+			adm_tech = 15
+		}
+		allow = {
+			dip = 3
+			NOT = { overextension_percentage = 0.02 }
+		}
+		effect = {
+			add_prestige = 5
+			add_country_modifier = {
+				name = innovative_modifier
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = "the_abolish_slavery_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { full_idea_group = innovativeness_ideas }
+			}
+		}
+	}
+	
+	judiciary_act = {
+		potential = {
+			NOT = { has_country_modifier = the_judiciary_act }
+		}
+		allow = {
+			full_idea_group = economic_ideas
+			full_idea_group = administrative_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_judiciary_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	combination_act = {
+		potential = {
+			is_year = 1750
+			NOT = { has_country_modifier = the_combination_act }
+			NOT = { has_idea = humanist_tolerance }
+		}
+		allow = {
+			full_idea_group = aristocracy_ideas
+			full_idea_group = innovativeness_ideas
+		}
+		effect = {
+			add_mercantilism = 0.05
+			add_country_modifier = {
+				name = "the_combination_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	school_establishment_act = {
+		potential = {
+			NOT = { has_country_modifier = the_school_establishment_act }
+			adm_tech = 16
+		}
+		allow = {
+			full_idea_group = innovativeness_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_school_establishment_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	revoke_restraint_of_appeals = {
+		potential = {
+			has_country_modifier = the_statue_in_restraint_of_appeals
+			NOT = { has_country_modifier = revocation_of_restraint_of_appeals }
+			religion = catholic
+			exists = PAP
+		}
+		allow = {
+			dip = 4
+			advisor = theologian
+			has_opinion = { who = PAP value = 100 }
+		}
+		effect = {
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			reverse_add_opinion = { who = PAP modifier = opinion_revoked_demotion }
+			add_country_modifier = {
+				name = "revocation_of_restraint_of_appeals"
+				duration = -1
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.0
+				OR = {
+					NOT = { has_opinion = { who = PAP value = 150 } }
+					num_of_cities = 5
+				}
+			}
+		}
+	}
+
+	enslave_albanians = {
+		potential = {
+			ai = no
+			NOT = { tag = ALB }
+			NOT = { has_country_flag = get_rid_of_this }
+			owns = 143
+			143 = {
+				NOT = { trade_goods = slaves }
+			}
+		}
+		allow = {
+			owns = 143             
+		}
+		effect = {
+			143 = {
+				change_trade_goods = slaves
+			}
+		}
+	}
+}

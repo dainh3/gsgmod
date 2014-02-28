@@ -1,0 +1,116 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+is_colonial = yes
+
+color = { 245 250 160 }
+
+historical_idea_groups = {
+	religious_ideas
+	economic_ideas
+	defensive_ideas
+	expansion_ideas
+	naval_ideas
+	diplomatic_ideas
+	offensive_ideas
+	trade_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	spanish_tercio
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Armstrong #0" = 20
+	"Graham Bell #0" = 20
+	"Cunard #0" = 20
+	"Doiron #0" = 20
+	"Fenerty #0" = 15
+	"Fortune #0" = 15
+	"Pineo Gesner #0" = 15
+	"Samuel #0" = 15
+	"Cove #0" = 10
+	"Howe #0" = 10
+	"Isnor #0" = 10
+	"MacAskill #0" = 10
+	"Slockum #0" = 10
+	"Valentine #0" = 10
+	"St. Castin #0" = 10
+	"Rale #0" = 10
+	"Lawrence #0" = 0
+	"Broussard #0" = 0
+	"Cope #0" = 0
+	"Loutre #0" = 0
+	"Calvin #0" = 0
+	"Cobb #0" = 0
+	"Eddy #0" = 0
+	"Gyles #0" = 0
+	"Morris #0" = 0
+	"Maillard #0" = 0
+	"Gautier #0" = 0
+	"Wallis #0" = 0
+	"Beckwith #0" = 0
+	"Pearce #0" = 0
+	"Williams #0" = 0
+	"Welsford #0" = 0
+	"Parker #0" = 0
+	"Paul #0" = 0
+	"Eardley Inglis #0" = 0
+	"Hall #0" = 0
+	"Bremner #0" = 0
+	"Timothy #0" = 0
+	"Wilbur #0" = 0
+	"William #0" = 0
+	"Alexander #0" = 0
+    "Stephen #0" = 0
+	
+    "Deborah #0" = -1
+    "Sarah #0" = -1
+    "Anne #0" = -1
+}
+
+leader_names = {
+	Meadows 
+	Caboto
+	Verizano
+	Homem 
+	Dugua
+	Cartier
+	Picarde
+	"de Croix" 
+	"de Champlain"
+	Dixon
+	Lawrence
+	Raonoke
+	Alexander
+	Jackson
+	Louisson
+	Hoser
+	Canso
+	Charlotto
+	Eddy
+}
+
+ship_names = {
+	Acadia Newfoundland "New Brunswick" "Cape Breton" "Old Fundy" "Feniacke" "Charlottetown" "Citadel" "St. John" "Hudson" "Rhodes" "Aix-la-Chapelle" "St. Domingo" Louisbourg Cajari Maliseet Creighton
+}
+
+army_names = {
+	"Republican Army" "Republican Guard" "$PROVINCE$ Militia"
+}
+fleet_names = {
+	"Republican Navy" "$PROVINCE$ Squadron"
+}

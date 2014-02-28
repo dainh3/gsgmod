@@ -1,0 +1,89 @@
+country_decisions = {
+	
+	benign_neglect = {
+		potential = {
+			NOT = { has_country_modifier = beneficial_neglect }
+			technology_group = western
+			is_colonial_nation = no #WTF PARADOX
+		}
+		allow = {
+			NOT = { overextension_percentage = 0.02 }
+			full_idea_group = innovativeness_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = "beneficial_neglect"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	colonial_expansion = {
+		potential = {
+			NOT = { has_country_modifier = restrictions_for_colonies }
+			NOT = { has_country_modifier = colonial_expansions }
+			technology_group = western
+		}
+		allow = {
+			adm = 3
+			full_idea_group = exploration_ideas
+			num_of_colonial_subjects = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonial_expansions"
+				duration = -1
+			}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	house_of_trade = {
+		potential = {
+			NOT = { has_country_modifier = the_house_of_trade }
+			technology_group = western
+		}
+		allow = {
+			full_idea_group = trade_ideas
+			num_of_protectorates = 2
+			trade_efficiency = 0.5
+		}
+		effect = {
+			add_mercantilism = 0.05
+			add_country_modifier = {
+				name = "the_house_of_trade"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	colonial_restrictions = {
+		potential = {
+			NOT = { has_country_modifier = colonial_expansions }
+			NOT = { has_country_modifier = restrictions_for_colonies }
+		}
+		allow =  {
+			adm = 3
+			num_of_colonial_subjects = 3
+			full_idea_group = exploration_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = "restrictions_for_colonies"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+}

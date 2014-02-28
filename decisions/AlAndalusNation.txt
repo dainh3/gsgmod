@@ -1,0 +1,53 @@
+country_decisions = {
+	al_andalus_nation = {
+		major = yes
+		potential = {
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = SPA }
+			NOT = { exists = ALA }
+			primary_culture = andalucian
+			religion_group = muslim
+			
+		}
+		allow = { 
+			adm_tech = 10
+			is_subject = no
+			is_at_war = no
+			owns_core_province = 224
+			owns_core_province = 225
+			owns_core_province = 1749
+			owns_core_province = 226
+			owns_core_province = 223
+			owns_core_province = 222
+			owns_core_province = 221
+			owns_core_province = 1748
+		}
+		effect = {
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			change_tag = ALA
+			change_government = caliphate
+			225 = {
+				add_base_tax = 2
+				change_religion = ROOT
+				change_culture = ROOT
+			}
+			ALA = {
+				set_capital = 225 # Cordoba
+				every_province = {
+					limit = {
+						region = iberian_peninsula
+						NOT = { owned_by = ALA }
+					}
+					add_claim = ALA
+				}
+			}
+			swap_free_idea_group = yes
+			add_piety = 0.5
+		}
+	}
+}

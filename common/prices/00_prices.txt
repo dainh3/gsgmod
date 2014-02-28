@@ -1,0 +1,3709 @@
+# base_price = X			base price in $. (default is 1.0 if not specified
+# min_demand = 0.5	  		Demand is never lower than this. (default is 0.01 if not specified)
+# max_demand = 1.4			Demand is never higher than this. (default is 2.0 if not specified)
+# goldtype = yes/no			This resource works like 'gold' if yes, using prices from mine-value in province instead of supply/demand and baseprice. Also creates gold-inflation
+# Supply = modifier			Scale value
+# Demand = { mtth def }		Multiplied together for every province owned by someone, multiplied by 0.01 * taxvalue/10 (for size)
+
+
+# Base resources
+grain = {
+	base_price = 1.5
+	max_demand = 5
+	supply = 1.0
+	demand = {
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}	
+		modifier = {
+			factor = 10.0
+			has_building = grain_depot
+		}	
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = quantity_ideas }
+		}
+		modifier = {
+			factor = 1.15
+			owner = { 
+				is_at_war = yes 
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { 
+				OR = {
+					owner = { millet = 1 } 
+					owner = { rice = 1 } 
+					owner = { maize = 1 } 
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				region = mongolia
+				region = manchuria
+				region = korean_region
+				region = chinese_region
+				region = japanese_region
+				region = indonesian_region
+				region = west_african_coast
+				region = central_africa
+				region = central_america
+				region = the_andes
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				region = indian_region
+				region = central_asia
+				continent = north_america
+				continent = south_america
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 100 }
+		}
+		modifier = {
+			factor = 2.0
+			has_building = refinery
+			trade_goods = beer
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = beer
+		}
+	}
+}
+
+wine = {
+	base_price = 2.5
+	max_demand = 2.5	
+	supply = 1.7
+	demand = {
+		modifier = {
+			factor = 0.9
+			owner = { has_country_modifier = the_liquor_act }
+		}
+		modifier = {
+			factor = 0.75
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 2.0
+			has_building = tax_assessor
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 3.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = war_college
+		}
+		modifier = {
+			factor = 2.0
+			has_building = admiralty
+		}
+		modifier = {
+			factor = 2.0
+			has_building = fine_arts_academy
+		}
+		modifier = {
+			factor = 2.0
+			has_building = university
+		}
+	}
+}
+
+wool = {
+	base_price = 2.0
+	max_demand = 5
+	supply = 0.5
+	demand = {
+		modifier = {
+			factor = 2.0
+			has_building = textile
+			trade_goods = cloth
+			continent = europe
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { 
+				trade_goods = cloth 
+			}
+		}
+		modifier = {
+			factor = 5.0
+			trade_goods = cloth
+			continent = europe
+		}
+		modifier = {
+			factor = 0.5
+			owner = { cotton = 2 }
+			continent = europe
+		}
+		modifier = {
+			factor = 0.1
+			owner = { cotton = 5 }
+			continent = europe
+		}
+		modifier = {
+			factor = 2.0
+			NOT = {
+				owner = { cotton = 1 }
+			}
+			continent = europe
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}	
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+	}
+}
+
+cloth = {
+	base_price = 3.0
+	max_demand = 3
+	supply = 1.2
+	demand = {
+		modifier = {
+			factor = 1.5
+			owner = { has_country_modifier = poor_uniforms }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}
+		modifier = {
+			factor = 1.05
+			has_building = dock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = drydock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = grand_shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_arsenal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_base
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}	
+	}
+}
+
+fish = {			#Basic Resource
+	base_price = 1.5
+	max_demand = 5
+	supply = 1.5
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { 
+				is_at_war = yes 
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { 
+				OR = {
+					owner = { grain = 1 } 
+					owner = { millet = 1 } 
+					owner = { rice = 1 } 
+					owner = { maize = 1 } 
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = {
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+}
+
+fur = {
+	base_price = 3.0
+	max_demand = 2.5
+	supply = 2.0
+	demand = {
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				region = the_low_countries
+				region = german_region
+				region = wielkopolska
+				region = malopolska
+				region = the_baltics
+				region = lithuanian_region
+				region = hungarian_region
+				region = ukrainian_region
+				region = icelandic_region
+				region = british_isles
+				region = scandinavian_region
+				region = russian_region
+				region = western_siberia
+				region = eastern_siberia
+				region = mongolia
+				region = manchuria
+				region = northern_america
+			}
+		}
+		modifier = {
+			factor = 0.75
+			OR = {
+				region = indonesian_region
+				region = indian_region
+				region = middle_east
+				region = central_africa
+				region = central_america
+				region = the_carribean
+				region = the_spanish_main
+				region = brazil_region
+				region = amazonas
+			}
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+	}
+}
+
+salt = {
+	base_price = 2.5
+	max_demand = 2.0
+	supply = 1.5
+	demand = {
+		modifier = {
+			factor = 1.5
+			trade_goods = fish
+		}
+		modifier = {
+			factor = 1.5
+			trade_goods = livestock
+		}
+		modifier = {
+			factor = 1.5
+			owner = { has_country_modifier = salt_crisis }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+	}
+}
+
+naval_supplies = {
+	base_price = 2.0
+	max_demand = 4
+	supply = 1.3
+	demand = {
+		modifier = {
+			factor = 0
+			NOT = { owner = { num_of_ports = 1 } }
+		}
+		modifier = {
+			factor = 1.15
+			has_building = dock
+		}
+		modifier = {
+			factor = 1.15
+			has_building = drydock
+		}
+		modifier = {
+			factor = 1.15
+			has_building = shipyard
+		}
+		modifier = {
+			factor = 1.15
+			has_building = grand_shipyard
+		}
+		modifier = {
+			factor = 1.15
+			has_building = naval_arsenal
+		}
+		modifier = {
+			factor = 1.15
+			has_building = naval_base
+		}
+		modifier = {
+			factor = 1.2
+			owner = { 
+				navy_size = 25
+			}
+		}
+		modifier = {
+			factor = 1.2
+			owner = { 
+				navy_size = 50
+			}
+		}
+		modifier = {
+			factor = 1.2
+			owner = { 
+				navy_size = 100
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { has_idea_group = naval_ideas }
+		}
+	}
+}
+
+# Metals
+copper = {
+	base_price = 2.0
+	max_demand = 3
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 1.5
+			owner = { has_country_modifier = poor_copper }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}
+		modifier = {
+			factor = 1.05
+			has_building = dock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = drydock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = grand_shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_arsenal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_base
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_artillery = 1 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_artillery = 5 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_artillery = 10 }
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				owner = { num_of_heavy_ship = 5 }
+				owner = { num_of_galley = 15 }
+			}
+		}	
+		modifier = {
+			factor = 1.1
+			OR = {
+				owner = { num_of_heavy_ship = 20 }
+				owner = { num_of_galley = 60 }
+			}
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				owner = { num_of_heavy_ship = 50 }
+				owner = { num_of_galley = 150 }
+			}
+		}		
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = defensive_ideas }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { owner = { is_at_war = yes } }
+		}
+	}
+}
+
+gold = {
+	base_price = 0
+	goldtype = yes
+	supply = 1
+	demand = { }
+}
+
+iron = {
+	base_price = 2.0
+	max_demand = 3.5
+	supply = 1.35
+	demand = {
+		modifier = {
+			factor = 1.5
+			owner = { has_country_modifier = poor_iron }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}	
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 25 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 100 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = quality_ideas }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea = smithian_economics }
+		}	
+		modifier = {
+			factor = 0.9
+			NOT = { owner = { is_at_war = yes } }
+		}
+	}
+}
+
+# African Resources
+slaves = {
+	base_price = 2.5
+	max_demand = 5
+	supply = 5.0
+	demand = {
+		modifier = {
+			factor = 0.1
+			NOT = {
+				OR = {
+					trade_goods = cotton
+					trade_goods = tobacco
+					trade_goods = sugar
+					trade_goods = coffee
+					trade_goods = cocoa
+					trade_goods = opium
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				trade_goods = cotton
+				trade_goods = tobacco
+				trade_goods = sugar
+				trade_goods = coffee
+				trade_goods = cocoa
+			}
+		}
+		modifier = {
+			factor = 5
+			trade_goods = opium
+		}
+		modifier = {
+			factor = 0.0
+			owner = { has_country_modifier = the_abolish_slavery_act }
+		}		
+		modifier = {
+			factor = 0.5
+			owner = { 
+				any_known_country = {
+					has_country_modifier = the_abolish_slavery_act 
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = expansion_ideas }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 2.0
+			has_building = plantations
+		}
+		modifier = {
+			factor = 4.0
+			has_building = royal_palace
+		}
+	}
+}
+
+ivory = {
+	base_price = 3.5
+	max_demand = 2
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = innovativeness_ideas }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = fine_arts_academy
+		}
+	}
+}
+
+# Eastern Resources
+tea = {
+	base_price = 3.0
+	max_demand = 1.75
+	supply = 10.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = expansion_ideas }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { 
+				owner = { has_discovered = 1371 } #Canton
+			}
+			NOT = { 
+				owner = { has_discovered = 1816 } #Beijing
+			}
+			NOT = { continent = asia }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				any_owned_province = {
+					region = chinese_region
+					is_overseas = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.5
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.5
+			has_building = embassy
+		}
+	}
+}
+
+chinaware = {
+	base_price = 3.5
+	max_demand = 1.75
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = expansion_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+	}
+}
+
+spices = {
+	base_price = 4.0
+	max_demand = 2
+	supply = 2.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+	}
+}
+
+# New World Resources
+coffee = {
+	base_price = 3.0
+	max_demand = 2.5
+	supply = 7.5
+	demand = {
+		modifier = {  
+			factor = 0.0
+			owner = {
+				NOT = {
+					OR = {
+						coffee = 1
+						any_known_country = { coffee = 1 }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 5.0
+			has_building = tax_assessor
+		}
+		modifier = {
+			factor = 1.2
+			owner = { has_idea_group = trade_ideas }
+		}
+	}
+}
+
+cotton = {
+	base_price = 2.5
+	max_demand = 4
+	supply = 0.9
+	demand = {
+		modifier = {
+			factor = 0.0
+			NOT = { 
+				trade_goods = cloth 
+			}
+		}
+		modifier = {
+			factor = 2.0
+			has_building = textile
+			trade_goods = cloth
+		}
+		modifier = {
+			factor = 0
+			NOT = { owner = { cotton = 1 } }
+			continent = europe
+		}
+		modifier = {
+			factor = 6.0
+			trade_goods = cloth
+			NOT = { continent = europe }
+		}
+		modifier = {
+			factor = 2.0
+			owner = { cotton = 2 }
+			continent = europe
+		}
+		modifier = {
+			factor = 3.0
+			owner = { cotton = 5 }
+			continent = europe
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+	}
+}
+
+sugar = {
+	base_price = 2.5
+	max_demand = 2.5
+	supply = 3.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 3.0
+			has_building = royal_palace
+		}
+	}
+}
+
+tobacco = {
+	base_price = 3.0
+	max_demand = 2.5
+	supply = 5.0
+	demand = {
+		modifier = {  
+			factor = 0.0
+			owner = {
+				NOT = {
+					OR = {
+						tobacco = 1
+						any_known_country = { tobacco = 1 }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 3.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 4.0
+			has_building = war_college
+		}
+		modifier = {
+			factor = 4.0
+			has_building = admiralty
+		}
+	}
+}
+
+cocoa = {
+	base_price = 3 
+	max_demand = 5	
+	supply = 3
+	demand = {
+		modifier = {  
+			factor = 0
+			owner = {
+				NOT = {
+					OR = {
+						cocoa = 1
+						any_known_country = { 
+							cocoa = 1
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.01
+			owner = {
+				NOT = {
+					technology_group = western
+					technology_group = ottoman
+					technology_group = muslim
+					technology_group = eastern
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+				}
+			}
+		}
+		modifier = {
+			factor = 6
+			owner = {
+				OR = {
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = north_american
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { has_building = marketplace }
+		}
+		modifier = {
+			factor = 2
+			has_building = customs_house
+		}	
+		modifier = {
+			factor = 0.1
+			OR = {
+				is_overseas = yes
+				owner = { is_colonial_nation = yes }
+			}
+		}	
+		modifier = {
+			factor = 0.5
+			is_looted = yes
+		}
+		modifier = {
+			factor = 0.5
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 1 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 2 } }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { NOT = { stability = 3 } }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 1 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+	}
+}
+
+unknown = {
+	base_price = 0
+}
+
+#GSG
+rice = {
+	base_price = 1.5           #basic resource
+	max_demand = 5
+	supply = 1.8
+	demand = {
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}	
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = quantity_ideas }
+		}
+		modifier = {
+			factor = 1.15
+			owner = { 
+				is_at_war = yes 
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { 
+				OR = {
+					owner = { grain = 1 } 
+					owner = { millet = 1 } 
+					owner = { maize = 1 } 
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				continent = europe
+				continent = north_america
+				continent = south_america
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				region = chinese_region
+				region = korean_region
+				region = japanese_region
+				region = indonesian_region
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 100 }
+		}
+	}
+}
+
+livestock = {
+	base_price = 2.0
+	max_demand = 3
+	supply = 3.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				region = mongolia
+				region = manchuria
+				region = central_asia
+				region = great_plains
+			}
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+			NOT = {
+				owner = {
+					any_known_country = { livestock = 1 }
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_cavalry = 5 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_cavalry = 10 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_cavalry = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 2.0
+			has_building = textile
+			trade_goods = leather
+		}
+		modifier = {
+			factor = 1.5
+			trade_goods = leather
+		}
+		modifier = {
+			factor = 2.5
+			has_building = march
+		}
+		modifier = {
+			factor = 2.5
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.5
+			has_building = war_college
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = offensive_ideas }
+		}
+	}
+}
+
+olive = {
+	base_price = 2.5
+	max_demand = 2.5
+	supply = 5.0
+	demand = {
+		modifier = {  					
+			factor = 2.0
+			OR = {
+				region = spanish_region
+				region = lombardia
+				region = two_sicilies
+				region = western_balkans
+				region = greece_region
+				region = turkey
+				region = occitania
+				region = middle_east
+				region = north_africa
+			}
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				OR = {
+					region = spanish_region
+					region = lombardia
+					region = two_sicilies
+					region = western_balkans
+					region = greece_region
+					region = turkey
+					region = occitania
+					region = middle_east
+					region = north_africa
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 3.5
+			has_building = embassy
+		}
+		modifier = {
+			factor = 3.5
+			has_building = royal_palace
+		}
+	}
+}
+
+silver = {
+	base_price = 0
+	goldtype = yes
+	supply = 1
+	demand = { }
+}
+
+lead = {
+	base_price = 2.5
+	max_demand = 8
+	supply = 10.0
+	demand = {
+		modifier = {
+			factor = 2.5
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { has_idea_group = quality_ideas }
+			NOT = { owner = { is_at_war = yes } }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { owner = { has_idea_group = quality_ideas } }
+			NOT = { owner = { is_at_war = yes } }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}
+		modifier = {
+			factor = 1.05
+			has_building = dock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = drydock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = grand_shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_arsenal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_base
+		}
+	}
+}
+
+ebony = {
+	base_price = 4.0
+	max_demand = 2
+	supply = 8.0
+	demand = {
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = innovativeness_ideas }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = fine_arts_academy
+		}
+	}
+}
+
+leather = {
+	base_price = 2.5
+	max_demand = 2.5
+	supply = 4.5
+	demand = {
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_cavalry = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_cavalry = 10 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_cavalry = 25 }
+		}
+	}
+}
+
+indigo = {
+	base_price = 4.0
+	max_demand = 3
+	supply = 5.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.5
+			has_building = textile
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = cloth
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = innovativeness_ideas }
+		}
+		modifier = {
+			factor = 0.0
+			not = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 2.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 4.0
+			has_building = fine_arts_academy
+		}
+	}
+}
+
+carmine = {
+	base_price = 3.5
+	max_demand = 3
+	supply = 6.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.5
+			has_building = textile
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = cloth
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = innovativeness_ideas }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 2.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 4.0
+			has_building = fine_arts_academy
+		}
+	}
+}
+
+cloves = {
+	base_price = 5.0
+	max_demand = 2
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			not = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+	}
+}
+
+maize = {
+	base_price = 1.5
+	max_demand = 5
+	supply = 1.2
+	demand = {
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}	
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = quantity_ideas }
+		}
+		modifier = {
+			factor = 1.25
+			owner = { 
+				is_at_war = yes 
+			}
+		}
+		modifier = {
+			factor = 1.15
+			NOT = { 
+				OR = {
+					owner = { millet = 1 } 
+					owner = { rice = 1 } 
+					owner = { grain = 1 } 
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				continent = asia
+				continent = africa
+			}
+		}
+		modifier = {
+			factor = 0
+			continent = europe
+			NOT = {
+				owner = {
+					OR = {
+						maize = 1
+						any_known_country = { maize = 1 }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			continent = europe
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 25 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { num_of_infantry = 100 }
+		}
+	}
+}
+
+wax = {
+	base_price = 2.0
+	max_demand = 3.5
+	supply = 6.0
+	demand = {
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 2.5
+			has_building = tax_assessor
+		}
+		modifier = {
+			factor = 2.5
+			has_building = fine_arts_academy
+		}
+		modifier = {
+			factor = 2.5
+			has_building = university
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = economic_ideas }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = administrative_ideas }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = religious_ideas }
+		}
+	}
+}
+
+silk = {
+	base_price = 4.5
+	max_demand = 2
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+	}
+}
+
+gems = {
+	base_price = 0
+	goldtype = yes
+	supply = 1
+	demand = { }
+}
+
+cinnamon = {
+	base_price = 5.0
+	max_demand = 2
+	supply = 5.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+	}
+}
+
+glassware = {
+	base_price = 4.0
+	max_demand = 3
+	supply = 5.0
+	demand = {
+		modifier = {
+			factor = 0.9
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.5
+			has_building = admiralty
+		}
+		modifier = {
+			factor = 1.5
+			has_building = embassy
+		}
+		modifier = {
+			factor = 2.5
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 1.5
+			has_building = fine_arts_academy
+		}
+		modifier = {
+			factor = 1.5
+			has_building = university
+		}
+	}
+}
+
+millet = {
+	base_price = 1.25
+	max_demand = 5
+	supply = 1.5
+	demand = {
+		modifier = {
+			factor = 1.05
+			has_building = armory
+		}
+		modifier = {
+			factor = 1.05
+			has_building = training_fields
+		}
+		modifier = {
+			factor = 1.05
+			has_building = barracks
+		}
+		modifier = {
+			factor = 1.05
+			has_building = regimental_camp
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = arsenal
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = conscription_center
+		}	
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = quantity_ideas }
+		}
+		modifier = {
+			factor = 1.15
+			owner = { 
+				is_at_war = yes 
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { 
+				OR = {
+					owner = { grain = 1 } 
+					owner = { rice = 1 } 
+					owner = { maize = 1 } 
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				continent = europe
+				continent = asia
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { num_of_infantry = 100 }
+		}
+	}
+}
+
+beer = {
+	base_price = 2.25
+	max_demand = 3.5
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 0.0
+			NOT = {
+				OR = {
+					continent = europe
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+			owner = {
+				NOT = {
+					OR = {
+						technology_group = western
+						technology_group = eastern
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.1
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.1
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.1
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.1
+			has_building = stock_exchange
+		}	
+		modifier = {
+			factor = 10.0
+			has_building = university
+		}	
+	}
+}
+
+palm = {
+	base_price = 2.5
+	max_demand = 2.0
+	supply = 7.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.5
+			has_building = embassy
+		}
+		modifier = {
+			factor = 5.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+	}
+}
+
+hemp = {
+	base_price = 2.0
+	max_demand = 3	
+	supply = 6.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = constable
+		}
+		modifier = {
+			factor = 1.05
+			has_building = workshop
+		}
+		modifier = {
+			factor = 1.05
+			has_building = counting_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = treasury_office
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = mint
+		}
+		modifier = {
+			factor = 1.05
+			has_building = stock_exchange
+		}	
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = dock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = drydock
+		}
+		modifier = {
+			factor = 1.05
+			has_building = shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = grand_shipyard
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_arsenal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = naval_base
+		}
+		modifier = {
+			factor = 1.1
+			owner = { 
+				navy_size = 25
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = { 
+				navy_size = 50
+			}
+		}
+		modifier = {
+			factor = 1.1
+			owner = { 
+				navy_size = 100
+			}
+		}
+	}
+}
+
+sandalwood = {
+	base_price = 4.5
+	max_demand = 2
+	supply = 7.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 25 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 50 }
+		}
+		modifier = {
+			factor = 1.05
+			owner = { prestige = 75 }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.05
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.05
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.05
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.05
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 1.05
+			has_building = temple
+		}
+		modifier = {
+			factor = 1.05
+			has_building = courthouse
+		}
+		modifier = {
+			factor = 1.05
+			has_building = spy_agency
+		}
+		modifier = {
+			factor = 1.05
+			has_building = town_hall
+		}	
+		modifier = {
+			factor = 1.05
+			has_building = college
+		}
+		modifier = {
+			factor = 1.05
+			has_building = cathedral
+		}
+		modifier = {
+			factor = 1.2
+			owner = { has_idea_group = religious_ideas }
+		}
+	}
+}
+
+brazilwood = {
+	base_price = 3.5
+	max_demand = 2.5
+	supply = 10.0
+	demand = {
+		modifier = {  
+			factor = 0.0
+			owner = {
+				NOT = {
+					OR = {
+						brazilwood = 1
+						any_known_country = { brazilwood = 1 }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 1.5
+			has_building = textile
+		}
+		modifier = {
+			factor = 2.0
+			trade_goods = cloth
+		}
+		modifier = {
+			factor = 1.1
+			owner = { has_idea_group = innovativeness_ideas }
+		}
+		modifier = {
+			factor = 0
+			not = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+		modifier = {
+			factor = 2.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 4.0
+			has_building = fine_arts_academy
+		}
+	}
+}
+
+nutmeg = {
+	base_price = 6.0
+	max_demand = 2
+	supply = 10.0
+	demand = {
+		modifier = {
+			factor = 0.8
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 2
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 5
+		}
+		modifier = {
+			factor = 0.9
+			revolt_risk = 10
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 10.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.0
+			has_building = embassy
+		}
+	}
+}
+
+opium = {
+	base_price = 3.0
+	max_demand = 1.75
+	supply = 4.0
+	demand = {
+		modifier = {
+			factor = 1.1
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 0
+			NOT = { controlled_by = owner }
+		}
+		modifier = {
+			factor = 1.1
+			has_building = marketplace
+		}
+		modifier = {
+			factor = 1.1
+			has_building = trade_depot
+		}
+		modifier = {
+			factor = 1.1
+			has_building = canal
+		}
+		modifier = {
+			factor = 1.1
+			has_building = road_network
+		}	
+		modifier = {
+			factor = 1.1
+			has_building = post_office
+		}
+		modifier = {
+			factor = 1.1
+			has_building = customs_house
+		}
+		modifier = {
+			factor = 2.5
+			has_building = embassy
+		}
+		modifier = {
+			factor = 5.0
+			has_building = royal_palace
+		}
+		modifier = {
+			factor = 2.5
+			has_building = fine_arts_academy
+		}
+		modifier = {
+			factor = 1.05
+			owner = { stability = 2 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { stability = 3 }
+		}
+	}
+}

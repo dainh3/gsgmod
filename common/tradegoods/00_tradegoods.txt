@@ -1,0 +1,339 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new resources, make sure they are uniquely named.
+# Please add price definitions to prices.txt as well.
+
+#Resource categories:
+
+#Essentials — simple goods, mostly food, needed for basic subsistence
+#fish, grain, maize, millet, rice, wool
+
+#Resources — simple goods important to the basic wellbeing of all parts of society
+#beer, copper, hemp, iron, leather, livestock, wax
+
+#Luxuries — available only to the richest in poorer societies, but to a fair swathe of the population in richer ones
+#cloth, fur, glassware, olive (oil), opium, palm (oil), salt, slaves, tea, wine
+
+#Exotic goods — spices and other highly sought-after goods. Some of these may have zero global supply until the right provinces are colonised
+#brazilwood, carmine, chinaware, cinnamon, cloves, ebony, indigo, ivory, nutmeg, sandalwood, silk, spices
+
+#Plantation goods — initially almost completely unavailable, become common by the 18th century with the massive growth of American plantations
+#cacao, coffee, cotton, sugar, tobacco
+
+#Strategic resources
+#lead, naval_supplies
+
+#Precious metals — use the Gold game mechanic
+#gems, gold, silver
+
+#Reserved for unknown resource in a new colony
+#unknown
+
+grain = {
+	color = { 0.7 0.7 0 }
+	modifier = {
+		land_forcelimit_modifier = 0.15
+	}
+}
+
+rice = {
+	color = { 0.7 0.7 0 }
+	modifier = {
+		land_forcelimit_modifier = 0.15
+	}
+}
+
+wine = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+livestock = {
+	color = { 0.0 1.0 0 }
+	modifier = {
+		cavalry_cost = -0.1
+	}
+}
+
+olive = {
+	color = { 0.1 0.1 0 }
+	modifier = {
+		global_manpower_modifier = 0.05
+	}
+}
+
+cloth = {
+	color = { 0.7 1.0 1.0 }
+	modifier = {
+		merc_maintenance_modifier = -0.15
+	}
+}
+
+silver = {
+	color = { 0.0 0.0 0.4 }
+}
+
+lead = {
+	color = { 1.0 0.4 0.4 }
+	modifier = {
+		war_exhaustion = -0.01
+	}
+}
+
+naval_supplies = {
+	color = { 1.0 0.4 0.4 }
+	modifier = {
+		naval_forcelimit_modifier = 0.15
+	}
+}
+
+ebony = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		prestige_decay = -0.005
+	}
+}
+
+leather = {
+	color = { 1.0 1.0 1 }
+	modifier = {
+		cavalry_power = 0.05
+	}
+}
+
+salt = {
+	color = { 1.0 0.0 1 }
+	modifier = {
+		land_maintenance_modifier = -0.05
+	}
+}
+
+indigo = {
+	color = { 0.0 1.0 0 }
+	modifier = {
+		legitimacy = 0.1
+	}
+}
+
+carmine = {
+	color = { 0.0 1.0 0 }
+	modifier = {
+		prestige = 0.25
+	}
+}
+
+slaves = {
+	color = { 0.0 0.0 0.0 }
+	modifier = {
+		global_tariffs = 0.05
+	}
+}
+
+coffee = {
+	color = { 1.0 0.0 1.0 }
+	modifier = {
+		defensiveness = 0.05
+	}
+}
+
+cloves = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		global_foreign_trade_power = 0.025
+	}
+}
+
+tobacco = {
+	color = { 0.0 0.7 0.5 }
+	modifier = {
+		global_spy_defense = 0.15
+	}
+}
+
+maize = {
+	color = { 0.7 0.7 0 }
+	modifier = {
+		land_forcelimit_modifier = 0.05
+	}
+}
+
+wax = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		papal_influence = 1
+	}
+}
+
+cotton = {
+	color = { 1.0 0.0 0.0 }
+	modifier = {
+		trade_steering = 0.05
+	}
+}
+
+wool = {
+	color = { 0.7 0.4 0 }
+	modifier = {
+		global_ship_cost = -0.05
+	}
+}
+
+silk = {
+	color = { 0.7 1.0 1.0 }
+	modifier = {
+		global_foreign_trade_power = 0.025
+	}
+}
+
+gold = {
+	color = { 0.0 0.0 0.4 }
+}
+
+gems = {
+	color = { 0.0 0.0 0.4 }
+}
+
+copper = {
+	color = { 0.0 0.4 0.4 }
+	modifier = {
+		cavalry_cost = -0.1
+	}
+}
+
+spices = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		spy_offense = 0.05
+	}
+}
+
+cinnamon = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		global_foreign_trade_power = 0.025
+	}
+}
+
+tea = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		advisor_cost = -0.15
+	}
+}
+
+ivory = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		diplomatic_reputation = 1
+	}
+}
+
+chinaware = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		legitimacy = 0.25
+	}
+}
+
+glassware = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		prestige = 0.25
+	}
+}
+
+unknown = {
+	color = { 0.5 0.5 0.5 }
+}
+
+millet = {
+	color = { 0.7 0.7 0 }
+	modifier = {
+		global_revolt_risk = -0.5
+	}
+}
+
+beer = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		production_efficiency = 0.05
+	}
+}
+
+fish = {
+	color = { 0.0 1.0 0 }
+	modifier = {
+		naval_forcelimit_modifier = 0.05
+	}
+}
+
+palm = {
+	color = { 0.0 1.0 0 }
+	modifier = {
+		global_manpower_modifier = 0.025
+	}
+}
+
+hemp = {
+	color = { 0.7 1.0 1.0 }
+	modifier = {
+		global_ship_cost=  -0.025
+	}
+}
+
+iron = {
+	color = { 0.0 1.0 0.0 }
+	modifier = {
+		infantry_cost = -0.1
+	}
+}
+
+sandalwood = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		global_missionary_strength = 0.01
+	}
+}
+
+brazilwood = {
+	color = { 0.7 0.0 0 }
+	modifier = {
+		prestige = 0.25
+	}
+}
+
+fur = {
+	color = { 1.0 1.0 1 }
+	modifier = {
+		colonist_placement_chance = 0.05
+	}
+}
+
+sugar = {
+	color = { 0.1 0.7 0.5 }
+	modifier = {
+		war_exhaustion_cost = -0.1
+	}
+}
+
+cocoa = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		relations_decay_of_me = 0.1
+	}
+}
+
+nutmeg = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		trade_efficiency = 0.05
+	}
+}
+
+opium = {
+	color = { 0.0 0.7 0.5 }
+	modifier = {
+		production_efficiency = -0.05
+	}
+}

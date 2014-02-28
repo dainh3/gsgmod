@@ -1,0 +1,177 @@
+l_english: 
+ steppe_horde_ruler_female: "Khatun"
+ revolutionary_republic_ruler_female: "Consul"
+ caliphate: "Caliphate"
+ caliphate_desc: "A form of government where the Caliph is the supreme religious and political leader of the nation."
+ caliphate_ruler: "Caliph"
+ caliphate_ruler_female: "Calipha"
+ 
+ theocratic_monarchy: "Theocratic Monarchy"
+ theocratic_monarchy_desc: "A form of government where the Shahanshah is the absolute head of state and religion, expressing both executive, legislative and judiciary powers alone."
+ theocratic_monarchy_muslim: "Islamic Empire"
+ theocratic_monarchy_ruler_persian: "Shahanshah"
+ theocratic_monarchy_ruler: "King"
+ theocratic_monarchy_ruler_female: "Queen"
+ 
+ despotic_monarchy_ruler_uzbehk: "Emir"
+ steppe_horde_ruler_uzbehk: "Emir"
+ tribal_despotism_ruler_uzbehk: "Emir"
+ tribal_federation_ruler_uzbehk: "Emir"
+ tribal_democracy_ruler_uzbehk: "Emir"
+ feudal_monarchy_ruler_baluchi: "Khan"
+ feudal_monarchy_ruler_wallachian: "Prince"
+ feudal_monarchy_wallachian: "Principality"
+ feudal_monarchy_ruler_vassal_baluchi: "Wali"
+ tribal_despotism_muslim: "Malikate"
+ tribal_federation_muslim: "Malikate"
+ 
+ despotic_monarchy_ruler_turkish: "Padishah"
+ absolute_monarchy_monarchy_ruler_turkish: "Padishah"
+ constitutional_monarchy_ruler_turkish: "Padishah"
+ enlightened_despotism_ruler_turkish: "Padishah"
+ modern_empire_ruler_turkish: "Padishah"
+ despotic_monarchy_ruler_vassal_turkish: "Bey"
+ 
+ #Persian
+ despotic_monarchy_ruler_persian: "Shah"
+ imperial_government_ruler_persian: "Shahanshah"
+ modern_empire_ruler_persian: "Shahanshah"
+ 
+ #Mughals
+ absolute_monarchy_ruler_kanauji: "Badshah"
+ imperial_government_ruler_kanauji: "Badshah"
+ modern_empire_ruler_kanauji: "Badshah"
+ 
+ imperial_government_ruler_east_persian: "Badshah"
+ modern_empire_ruler_east_persian: "Badshah"
+ 
+ imperial_government_ruler_uzbehk: "Badshah"
+ modern_empire_ruler_uzbehk: "Badshah"
+ 
+ noble_republic_ruler_persian: "Mirza"
+ 
+ iqta_ruler_vassal: "Emir"
+ iqta_ruler_turkish: "Bey"
+ 
+ #HRE
+ archduchy_vassal: "Duchy"
+ archduchy_ruler_vassal: "Duke"
+ archduchy_ruler_female_vassal: "Duchess"
+
+ despotic_monarchy_prussian: "Kingdom"
+ despotic_monarchy_ruler_prussian: "King"
+ despotic_monarchy_ruler_female_prussian: "Queen"
+
+ feudal_monarchy_prussian: "Kingdom"
+ feudal_monarchy_ruler_prussian: "King"
+ feudal_monarchy_ruler_female_prussian: "Queen"
+
+ 
+ despotic_monarchy_germanic: "Duchy"
+ despotic_monarchy_ruler_germanic: "Duke"
+ despotic_monarchy_ruler_female_germanic: "Duchess"
+ 
+ despotic_monarchy_vassal_germanic: "County"
+ despotic_monarchy_ruler_vassal_germanic: "Count"
+ despotic_monarchy_ruler_female_vassal_germanic: "Countess"
+ 
+ feudal_monarchy_germanic: "Duchy"
+ feudal_monarchy_ruler_germanic: "Duke"
+ feudal_monarchy_ruler_female_germanic: "Duchess"
+ 
+ feudal_monarchy_vassal_germanic: "County"
+ feudal_monarchy_ruler_vassal_germanic: "Count"
+ feudal_monarchy_ruler_female_vassal_germanic: "Countess"
+ 
+ despotic_monarchy_lowland: "Duchy"
+ despotic_monarchy_ruler_lowland: "Duke"
+ despotic_monarchy_ruler_female_lowland: "Duchess"
+ 
+ feudal_monarchy_lowland: "Duchy"
+ feudal_monarchy_ruler_lowland: "Duke"
+ feudal_monarchy_ruler_female_lowland: "Duchess"
+ 
+ despotic_monarchy_burgundian: "Duchy"
+ despotic_monarchy_ruler_burgundian: "Duke"
+ despotic_monarchy_ruler_female_burgundian: "Duchess"
+ 
+ feudal_monarchy_burgundian: "Duchy"
+ feudal_monarchy_ruler_burgundian: "Duke"
+ feudal_monarchy_ruler_female_burgundian: "Duchess"
+
+ #Latins 
+ despotic_monarchy_latin: "Duchy"
+ despotic_monarchy_ruler_latin: "Duke"
+ despotic_monarchy_ruler_female_latin: "Duchess"
+ despotic_monarchy_vassal_latin: "County"
+ despotic_monarchy_ruler_vassal_latin: "Count"
+ despotic_monarchy_ruler_female_vassal_latin: "Countess"
+ 
+ feudal_monarchy_latin: "Duchy"
+ feudal_monarchy_ruler_latin: "Duke"
+ feudal_monarchy_ruler_female_latin: "Duchess"
+ feudal_monarchy_vassal_latin: "County"
+ feudal_monarchy_ruler_vassal_latin: "Count"
+ feudal_monarchy_ruler_female_vassal_latin: "Countess"
+ 
+ administrative_monarchy_latin: "Duchy"
+ administrative_monarchy_ruler_latin: "Duke"
+ administrative_monarchy_ruler_female_latin: "Duchess"
+ 
+ administrative_monarchy_tuscan: "Grand Duchy"
+ administrative_monarchy_ruler_tuscan: "Grand Duke"
+ administrative_monarchy_ruler_female_tuscan: "Grand Duchess"
+ 
+ administrative_monarchy_vassal_latin: "County"
+ administrative_monarchy_ruler_vassal_tuscan: "Count"
+ administrative_monarchy_ruler_female_vassal_tuscan: "Countess"
+ 
+ administrative_republic_ruler_lombard: "Podestà"
+ administrative_republic_ruler_venetian: "Podestà"
+ administrative_republic_ruler_tuscan: "Gonfaloniere"
+ administrative_republic_ruler_umbrian: "Gonfaloniere"
+ administrative_republic_ruler_neapolitan: "Capitano"
+ administrative_republic_ruler_sicilian: "Capitano"
+ 
+ noble_republic_ruler_latin: "Prince"
+ constitutional_republic_ruler_latin: "Consul"
+ republican_dictatorship_ruler_latin: "Dictator"
+ bureaucratic_despotism_ruler_latin: "Prime Minister"
+ revolutionary_republic_ruler_latin: "President"
+ 
+ #Grand Dukes
+ despotic_monarchy_russian: "Grand Duchy"
+ despotic_monarchy_ruler_russian: "Grand Duke"
+ despotic_monarchy_ruler_female_russian: "Grand Duchess"
+ 
+ feudal_monarchy_russian: "Grand Duchy"
+ feudal_monarchy_ruler_russian: "Grand Duke"
+ feudal_monarchy_ruler_female_russian: "Grand Duchess"
+ 
+ despotic_monarchy_russian_vassal: "Duchy"
+ despotic_monarchy_ruler_russian_vassal: "Duke"
+ despotic_monarchy_ruler_female_russian_vassal: "Duchess"
+ 
+ feudal_monarchy_russian_vassal: "Duchy"
+ feudal_monarchy_ruler_russian_vassal: "Duke"
+ feudal_monarchy_ruler_female_russian_vassal: "Duchess"
+ 
+ despotic_monarchy_lithuanian: "Grand Duchy"
+ despotic_monarchy_ruler_lithuanian: "Grand Duke"
+ despotic_monarchy_ruler_female_lithuanian: "Grand Duchess"
+ 
+ feudal_monarchy_lithuanian: "Grand Duchy"
+ feudal_monarchy_ruler_lithuanian: "Grand Duke"
+ feudal_monarchy_ruler_female_lithuanian: "Grand Duchess"
+ 
+ despotic_monarchy_lithuanian_vassal: "Duchy"
+ despotic_monarchy_ruler_lithuanian_vassal: "Duke"
+ despotic_monarchy_ruler_female_lithuanian_vassal: "Duchess"
+ 
+ feudal_monarchy_lithuanian_vassal: "Duchy"
+ feudal_monarchy_ruler_lithuanian_vassal: "Duke"
+ feudal_monarchy_ruler_female_lithuanian_vassal: "Duchess"
+ 
+ #Orders
+ theocratic_government_ruler_vassal_prussian: "Meister"
+ theocratic_government_muslim: "Islamic State"

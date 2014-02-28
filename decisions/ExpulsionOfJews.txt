@@ -1,0 +1,52 @@
+# Israel colonial refugee state
+
+country_decisions = {	
+	expulsion_of_jews = {
+		potential = {
+			NOT = { exists = ISR }
+			NOT = { religious_ideas = 7 }
+			NOT = { plutocracy_ideas = 6 }
+			exploration_ideas = 2
+			is_year = 1600
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+			any_owned_province = {
+				is_overseas = yes
+				has_empty_adjacent_province = yes
+			}
+		}
+		allow = {
+			is_at_war = no
+			adm = 3
+			stability = 1
+		}
+		effect = {
+			add_prestige = 10
+			add_stability = 1
+			random_owned_province = {
+				limit = {
+					is_overseas = yes
+					has_empty_adjacent_province = yes
+				}
+				random_empty_neighbor_province = {
+					limit = {
+						has_discovered = ROOT
+					}
+					#create_colony = 2
+					add_colonysize = 1000
+					cede_province = ROOT
+					add_building = fort2
+					add_core = ISR
+					change_religion = jewish
+					change_culture = ashkenazi
+				}
+			}
+			release = ISR
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

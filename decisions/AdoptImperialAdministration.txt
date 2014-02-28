@@ -1,0 +1,66 @@
+country_decisions = {
+	adopt_imperial_administration = {
+		potential = {
+			NOT = { government = imperial_government }
+			NOT = { government = modern_empire }
+			government = monarchy
+			is_tribal = no
+			is_nomad = no
+			prestige = 0
+			has_factions = no
+			NOT = { is_lesser_in_union = yes }
+			NOT = { adm_tech = 22 }
+			
+		}
+		allow = {
+			stability = 1
+			adm_tech = 5
+			num_of_cities = 40
+			adm_power = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 7300
+			}
+			change_government = imperial_government
+			add_stability = -2
+			add_prestige = 20
+			add_adm_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	adopt_modern_imperial_administration = {
+		potential = {
+			NOT = { government = imperial_government }
+			NOT = { government = modern_empire }
+			government = monarchy
+			is_tribal = no
+			is_nomad = no
+			prestige = 0
+			adm_tech = 22
+			NOT = { is_lesser_in_union = yes }
+			
+		}
+		allow = {
+			stability = 1
+			num_of_cities = 40
+			adm_power = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 7300
+			}
+			change_government = modern_empire
+			add_stability = -2
+			add_prestige = 20
+			add_adm_power = -100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

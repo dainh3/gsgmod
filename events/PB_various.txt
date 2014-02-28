@@ -1,0 +1,229 @@
+country_event = {
+	id = meneth.0
+	title = "EVTNAME700"
+	desc = "EVTDESC700"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		FROM = {
+			# + DIP, - MIL
+			if = {
+				limit = {
+					OR = {
+						government = merchant_republic
+						government = dutch_republic
+						government = ambrosian_republic
+						government = colonial_government
+					}
+				}
+				random = {
+					chance = 60
+					change_dip = 1
+				}
+				random = {
+					chance = 30
+					change_dip = 2
+				}
+				random = {
+					chance = 50
+					change_adm = 1
+				}
+				random = {
+					chance = 25
+					change_adm = 2
+				}
+				random = {
+					chance = 40
+					change_mil = 1
+				}
+				random = {
+					chance = 20
+					change_mil = 2
+				}
+			}
+			# + MIL, - ADM
+			if = {
+				limit = {
+					OR = {
+						government = tribal_democracy
+						government = republican_dictatorship
+					}
+				}
+				random = {
+					chance = 50
+					change_dip = 1
+				}
+				random = {
+					chance = 25
+					change_dip = 2
+				}
+				random = {
+					chance = 40
+					change_adm = 1
+				}
+				random = {
+					chance = 20
+					change_adm = 2
+				}
+				random = {
+					chance = 60
+					change_mil = 1
+				}
+				random = {
+					chance = 30
+					change_mil = 2
+				}
+			}
+			# +ADM/MIL, - DIP
+			if = {
+				limit = {
+					OR = {
+						government = revolutionary_republic
+						government = bureaucratic_despotism
+					}
+				}
+				random = {
+					chance = 40
+					change_dip = 1
+				}
+				random = {
+					chance = 20
+					change_dip = 1
+				}
+				random = {
+					chance = 55
+					change_adm = 1
+				}
+				random = {
+					chance = 22
+					change_adm = 2
+				}
+				random = {
+					chance = 55
+					change_mil = 1
+				}
+				random = {
+					chance = 22
+					change_mil = 2
+				}
+			}
+			# + DIP/MIL, - ADM
+			if = {
+				limit = {
+					OR = {
+						government = american_republic
+						government = noble_republic
+					}
+				}
+				random = {
+					chance = 55
+					change_dip = 1
+				}
+				random = {
+					chance = 22
+					change_dip = 2
+				}
+				random = {
+					chance = 40
+					change_adm = 1
+				}
+				random = {
+					chance = 20
+					change_adm = 2
+				}
+				random = {
+					chance = 55
+					change_mil = 1
+				}
+				random = {
+					chance = 22
+					change_mil = 2
+				}
+			}
+			# + ADM, - DIP
+			if = {
+				limit = {
+					government = administrative_republic
+				}
+				random = {
+					chance = 40
+					change_dip = 1
+				}
+				random = {
+					chance = 20
+					change_dip = 2
+				}
+				random = {
+					chance = 60
+					change_adm = 1
+				}
+				random = {
+					chance = 30
+					change_adm = 2
+				}
+				random = {
+					chance = 50
+					change_mil = 1
+				}
+				random = {
+					chance = 25
+					change_mil = 2
+				}
+			}
+			# Balanced
+			if = {
+				limit = {
+					OR = {
+						government = constitutional_republic
+						government = federal_republic
+						NOT = {
+							OR = {
+								government = colonial_government
+								government = merchant_republic
+								government = dutch_republic
+								government = ambrosian_republic
+								government = american_republic
+								government = noble_republic
+								government = tribal_democracy
+								government = republican_dictatorship
+								government = revolutionary_republic
+								government = bureaucratic_despotism
+								government = administrative_republic
+							}
+						}
+					}
+				}
+				random = {
+					chance = 50
+					change_dip = 1
+				}
+				random = {
+					chance = 25
+					change_dip = 2
+				}
+				random = {
+					chance = 50
+					change_adm = 1
+				}
+				random = {
+					chance = 25
+					change_adm = 2
+				}
+				random = {
+					chance = 50
+					change_mil = 1
+				}
+				random = {
+					chance = 25
+					change_mil = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = OK
+	}
+}

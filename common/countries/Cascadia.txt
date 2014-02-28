@@ -1,0 +1,95 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+is_colonial = yes
+
+color = { 81 93 207 }
+
+historical_idea_groups = {
+	religious_ideas
+	economic_ideas
+	defensive_ideas
+	expansion_ideas
+	naval_ideas
+	diplomatic_ideas
+	offensive_ideas
+	trade_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	spanish_tercio
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"George #0" = 20
+	"James #0" = 20
+	"John #0" = 20
+	"Thomas #0" = 20
+	"Charles #0" = 15
+	"Daniel #0" = 15
+	"Henry #0" = 15
+	"Samuel #0" = 15
+	"Arthur #0" = 10
+	"Cyrus #0" = 10
+	"David #0" = 10
+	"Stanislav #0" = 10
+	"Miguel #0" = 10
+	"Nathaniel #0" = 10
+	"Peter #0" = 10
+	"Richard #0" = 10
+	"Aaron #0" = 0
+	"Petrov #0" = 0
+	"Ivan #0" = 0
+	"Vladimir #0" = 0
+	"Calvin #0" = 0
+	"Jacques #0" = 0
+	"Elbridge #0" = 0
+	"Eric #0" = 0
+	"Francis #0" = 0
+	"Molotov #0" = 0
+}
+
+leader_names = {
+	"de Beers"
+	Johnson
+	Bering
+	Washington
+	"van Couver"
+	Ilyich
+	Ulynov
+	"de Croix" 
+	"de Champlain"
+	"o'Donnaugh"
+	Lawrence
+	Raonoke
+	Alexander
+	Jackson
+	Louisson
+	Canso
+	Charlotto
+	Eddy
+}
+
+ship_names = {
+	Cascadia Vancouver Seattle Columbia "The Aryan Race" "White Pride World Wide" Covington Harold
+}
+
+army_names = {
+	"Royal Army" "Crown Guard" "$PROVINCE$ Militia"
+}
+fleet_names = {
+	"Royal Navy" "$PROVINCE$ Squadron"
+}

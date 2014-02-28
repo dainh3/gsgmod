@@ -1,0 +1,80 @@
+government = feudal_monarchy
+
+mercantilism = 0.1
+
+primary_culture = burgundian
+culture_group_union = lowland
+add_accepted_culture = arpitan
+add_accepted_culture = wallonian
+add_accepted_culture = occitain
+add_accepted_culture = piedmontese
+add_accepted_culture = rheinlaender
+add_accepted_culture = hessian
+add_accepted_culture = hannoverian
+
+religion = catholic
+technology_group = western
+capital = 189 # Lothringen
+
+843.1.1 = {
+	monarch = {
+		name = "Lothair I"
+		dynasty = "Carolingian"
+	}
+}
+	
+855.1.1 = {
+	monarch = {
+		name = "Lothair II"
+		dynasty = "Carolingian"
+	}
+}
+
+869.1.1 = {
+	monarch = {
+		name = "Charles I"
+		dynasty = "Carolingian"
+	}
+}
+
+880.1.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "Carolingian"
+	}
+}
+
+882.1.1 = {
+	monarch = {
+		name = "Charles II"
+		dynasty = "Carolingian"
+	}
+}
+
+887.1.1 = {
+	monarch = {
+		name = "Arnulf I"
+		dynasty = "Carolingian"
+	}
+}
+
+895.1.1 = {
+	monarch = {
+		name = "Zwentibold"
+		dynasty = "Carolingian"
+	}
+}
+
+900.1.1 = {
+	monarch = {
+		name = "Louis II"
+		dynasty = "Carolingian"
+	}
+}
+
+911.1.1 = {
+	monarch = {
+		name = "Charles III"
+		dynasty = "Carolingian"
+	}
+}

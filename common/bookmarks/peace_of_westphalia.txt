@@ -1,0 +1,17 @@
+bookmark =
+{
+	name = "PEACE_OF_WESTPHALIA_TITLE"
+	desc = "PEACE_OF_WESTPHALIA_DESC"
+	date = 1648.10.24
+	
+	country = NED
+	country = SWI
+	country = SAV
+	country = TUS
+	country = PAP
+	country = VEN
+	country = PAR
+	
+	easy_country = FRA
+	easy_country = SPA
+}

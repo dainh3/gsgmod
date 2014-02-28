@@ -1,0 +1,969 @@
+country_decisions = {
+	#####GETTING OUT OF TRIBAL GOVERNMENT#####
+	#establishing a mint
+	reform_tribal_coin_minting = {
+		major = yes
+		potential = {
+			is_tribal = yes
+			NOT = { government = steppe_horde }
+			NOT = { has_country_modifier = tribal_cash_economy }
+		}
+		allow = {
+			adm_tech = 1
+			stability = 2
+			is_at_war = no
+			adm_power = 100
+			legitimacy = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = tribal_cash_economy
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}
+			add_stability = -2
+			add_legitimacy = -20
+			add_inflation = 5
+			add_adm_power = -100
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#standardizing alphabet and writing system
+	standardize_tribal_alphabet = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_cash_economy
+			NOT = { has_country_modifier = standardized_alphabet }
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			NOT = { has_country_modifier = centralization_modifier }
+			adm_power = 100
+		}
+		effect = {
+			add_stability = -1
+			add_adm_power = -100
+			add_country_modifier = {
+				name = standardized_alphabet
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#adopt an official language
+	tribal_official_language = {
+		major = yes
+		potential = {
+			has_country_modifier = standardized_alphabet
+			NOT = { has_country_modifier = adopted_official_language }
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+			NOT = { has_country_modifier = centralization_modifier }
+			adm_power = 100
+		}
+		effect = {
+			add_stability = -2
+			add_adm_power = -100
+			random_owned_province = {
+					spawn_rebels = {
+						type = particularist_rebels
+						size = 1
+					}
+				}
+			add_country_modifier = {
+				name = adopted_official_language
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#permanent government headquarters
+	permanent_government_hq = {
+		major = yes
+		potential = {
+			has_country_modifier = adopted_official_language
+			NOT = { has_country_modifier = permanent_capital }
+		}
+		allow = {
+			stability = 1
+			adm_power = 150
+			is_at_war = no
+			NOT = { has_country_modifier = centralization_modifier }
+		}
+		effect = {
+			add_adm_power = -150
+			add_stability = -1
+			capital_scope = {
+				add_province_modifier = {
+					name = permanent_capital_province
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = permanent_capital
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#salaried civil service
+	establish_civil_service = {
+		major = yes
+		potential = {
+			has_country_modifier = permanent_capital
+			NOT = { has_country_modifier = tribal_civil_service }
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			NOT = { has_country_modifier = centralization_modifier }
+			adm_power = 300
+		}
+		effect = {
+			add_adm_power = -300
+			add_country_modifier = {
+				name = tribal_civil_service
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#trade regulation and codified taxes
+	tribal_trade_regulation_taxes = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_civil_service
+			NOT = { has_country_modifier = tribal_trade_regulation }
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			NOT = { has_country_modifier = centralization_modifier }
+			dip_power = 100
+		}
+		effect = {
+			add_dip_power = -100
+			add_stability = -1
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 1
+				}
+			}
+			add_country_modifier = {
+				name = tribal_trade_regulation
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 1825
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#build port in coastal province
+	thalassocracy_marketplace = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_trade_regulation
+			num_of_ports = 1
+			NOT = {
+				OR = {
+					has_country_flag = feudal_route
+					has_country_flag = despotism_route
+					has_country_flag = kritarchy_route
+					has_country_flag = cult_route
+					has_country_flag = thalassocracy_route
+				}
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			dip_power = 100
+			is_at_war = no
+			treasury = 50
+			any_owned_province = {
+				has_port = yes
+				controlled_by = ROOT
+			}
+			advisor = naval_reformer
+			dip_tech = 2
+		}
+		effect = {
+			add_dip_power = -100
+			add_treasury = -50
+			random_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				if = {
+					limit = {
+						NOT = { has_building = dock }
+					}
+					add_building = dock
+				}
+				if = {
+					limit = {
+						has_building = dock
+						NOT = { has_building = drydock }
+					}
+					add_building = drydock
+				}
+				add_base_tax = 1
+				if = {
+					limit = {
+						NOT = { has_province_modifier = center_of_trade_modifier }
+					}
+					add_province_modifier = {
+						name = center_of_trade_modifier
+						duration = -1
+					}
+				}
+			}
+			set_country_flag = thalassocracy_route
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#establish provincial trading posts
+	thalassocracy_trade_posts = {
+		major = yes
+		potential = {
+			has_country_flag = thalassocracy_route
+			NOT = { has_country_modifier = thalassocracy_trade_posts_modifier }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			dip_power = 400
+			is_at_war = no
+			treasury = 300
+		}
+		effect = {
+			add_dip_power = -400
+			add_treasury = -300
+			add_prestige = 5
+			add_country_modifier = {
+				name = thalassocracy_trade_posts_modifier
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#adopt official standard
+	thalassocracy_standard = {
+		major = yes
+		potential = {
+			has_country_modifier = thalassocracy_trade_posts_modifier
+			NOT = { has_country_modifier = thalassocratic_standard }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			dip_power = 50
+			is_at_war = no
+		}
+		effect = {
+			add_dip_power = -50
+			add_prestige = 10
+			add_legitimacy = 5
+			add_country_modifier = {
+				name = thalassocratic_standard
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}			
+		}
+	}
+	
+	#change gov to thalassocracy
+	declare_thalassocracy = {
+		major = yes
+		potential = {
+			has_country_modifier = thalassocratic_standard
+			is_tribal = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 3
+			dip_power = 500
+			adm_power = 500
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -4
+			add_dip_power = -500
+			add_adm_power = -500
+			change_government = thalassocratic_government
+			create_explorer = 25
+			custom_tooltip = declare_thalassocracy_tooltip
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			hidden_effect = {
+				remove_country_modifier = tribal_cash_economy
+				remove_country_modifier = standardized_alphabet
+				remove_country_modifier = adopted_official_language
+				remove_country_modifier = permanent_capital
+				remove_country_modifier = tribal_civil_service
+				remove_country_modifier = tribal_trade_regulation
+				every_owned_province = {
+					limit = {
+						has_province_modifier = permanent_capital_province
+					}
+					remove_province_modifier = permanent_capital_province
+				}
+				clr_country_flag = thalassocracy_route
+			}
+		}
+	}
+	
+	#religious cult: build a big temple
+	cult_build_big_temple = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_trade_regulation
+			NOT = {
+				OR = {
+					has_country_flag = feudal_route
+					has_country_flag = despotism_route
+					has_country_flag = kritarchy_route
+					has_country_flag = cult_route
+					has_country_flag = thalassocracy_route
+				}
+			}
+			religion_group = pagan
+			NOT = {
+				capital_scope = {
+					has_building = temple
+				}
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			adm_power = 100
+			is_at_war = no
+			treasury = 50
+		}
+		effect = {
+			capital_scope = {
+				add_building = temple
+				add_province_modifier = {
+					name = cult_central_temple
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			add_treasury = -50
+			add_adm_power = -100
+			add_prestige = 10
+			add_legitimacy = 10
+			set_country_flag = cult_route
+		}
+	}
+	
+	#religious cult: predict eclipse
+	cult_predict_eclipse = {
+		major = yes
+		potential = {
+			has_country_flag = cult_route
+			NOT = { has_country_modifier = celestial_god }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 2
+			advisor = natural_scientist
+			adm_power = 100
+		}
+		effect = {
+			add_stability = -2
+			kill_advisor = natural_scientist
+			add_adm_power = -100
+			random_owned_province = {
+				spawn_rebels = {
+					type = heretic_rebels
+					size = 1
+				}
+			}
+			add_country_modifier = {
+				name = celestial_god
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#wipe out opposing religions
+	cult_wipe_out_opposing = {
+		major = yes
+		potential = {
+			has_country_modifier = celestial_god
+			NOT = { has_country_modifier = cult_purge }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 2
+			adm_power = 200
+		}
+		effect = {
+			add_stability = -3
+			add_adm_power = -200
+			random_owned_province = {
+				limit = {
+					is_capital = no
+				}
+				spawn_rebels = {
+					type = heretic_rebels
+					size = 1
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = heretic_rebels
+					size = 1
+				}
+			}
+			add_country_modifier = {
+				name = cult_purge
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#declare yourself a living god
+	declare_cult = {
+		major = yes
+		potential = {
+			has_country_modifier = cult_purge
+			is_tribal = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			adm_power = 500
+			is_at_war = no
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = -500
+			change_government = religious_cult
+			custom_tooltip = declare_cult_tooltip
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			hidden_effect = {
+				remove_country_modifier = tribal_cash_economy
+				remove_country_modifier = standardized_alphabet
+				remove_country_modifier = adopted_official_language
+				remove_country_modifier = permanent_capital
+				remove_country_modifier = tribal_civil_service
+				remove_country_modifier = tribal_trade_regulation
+				every_owned_province = {
+					limit = {
+						has_province_modifier = permanent_capital_province
+					}
+					remove_province_modifier = permanent_capital_province
+				}
+				clr_country_flag = cult_route
+			}
+		}
+	}
+	
+	#kritarchy: establish courts
+	kritarchy_establish_courts = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_trade_regulation
+			NOT = {
+				OR = {
+					has_country_flag = feudal_route
+					has_country_flag = despotism_route
+					has_country_flag = kritarchy_route
+					has_country_flag = cult_route
+					has_country_flag = thalassocracy_route
+				}
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			adm_power = 100
+			is_at_war = no
+		}
+		effect = {
+			capital_scope = {
+				add_building = courthouse
+			}
+			add_adm_power = -100
+			add_stability = 1
+			add_country_modifier = {
+				name = kritarchy_courts_established
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			set_country_flag = kritarchy_route
+		}
+	}
+	
+	#kritarchy: promote wise local elders
+	kritarchy_promote_elders = {
+		major = yes
+		potential = {
+			has_country_modifier = kritarchy_courts_established
+			NOT = { has_country_modifier = kritarchy_elders_promoted }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			adm_power = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = kritarchy_elders_promoted
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			add_adm_power = -100
+		}
+	}
+	
+	#kritarchy: overrule local customs
+	kritarchy_overrule_customs = {
+		major = yes
+		potential = {
+			has_country_modifier = kritarchy_elders_promoted
+			NOT = { has_country_modifier = kritarchy_written_law }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 2
+			is_at_war = no
+			adm_power = 100
+		}
+		effect = {
+			add_stability = -2
+			add_country_modifier = {
+				name = kritarchy_written_law
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#kritarchy: declare judges as supreme
+	declare_kritarchy = {
+		major = yes
+		potential = {
+			has_country_modifier = kritarchy_written_law
+			is_tribal = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 3
+			is_at_war = no
+			adm_power = 500
+		}
+		effect = {
+			add_stability = -4
+			change_government = kritarchy_government
+			add_adm_power = -500
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			custom_tooltip = declare_kritarchy_tooltip
+			hidden_effect = {
+				remove_country_modifier = tribal_cash_economy
+				remove_country_modifier = standardized_alphabet
+				remove_country_modifier = adopted_official_language
+				remove_country_modifier = permanent_capital
+				remove_country_modifier = tribal_civil_service
+				remove_country_modifier = tribal_trade_regulation
+				every_owned_province = {
+					limit = {
+						has_province_modifier = permanent_capital_province
+					}
+					remove_province_modifier = permanent_capital_province
+				}
+				clr_country_flag = kritarchy_route
+			}
+		}
+	}
+	
+	#despotism: conquer nearby wankers
+	despotism_conquer_nearby = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_trade_regulation
+			#any_neighbor_province = {
+			#	is_empty = yes
+			#	native_size = 1
+			#}
+			NOT = {
+				OR = {
+					has_country_flag = feudal_route
+					has_country_flag = despotism_route
+					has_country_flag = kritarchy_route
+					has_country_flag = cult_route
+					has_country_flag = thalassocracy_route
+				}
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			mil_power = 100
+		}
+		effect = {
+			add_mil_power = -100
+			custom_tooltip = despotism_conquer_nearby_tooltip
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						has_empty_adjacent_province = yes
+					}
+					random_empty_neighbor_province = {
+						limit = {
+							has_discovered = ROOT
+							native_size = 1
+						}
+						add_colonysize = 500
+						cede_province = ROOT
+						change_native_size = -100
+					}
+				}
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			set_country_flag = despotism_route
+		}
+	}
+	
+	#despotism: caste system
+	despotism_caste_system = {
+		major = yes
+		potential = {
+			has_country_flag = despotism_route
+			NOT = { has_country_modifier = despotic_caste_system }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			adm_power = 250
+		}
+		effect = {
+			add_adm_power = -250
+			add_stability = -2
+			add_country_modifier = {
+				name = despotic_caste_system
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#despotism: kill local leaders
+	despotism_kill_local_leaders = {
+		major = yes
+		potential = {
+			has_country_modifier = despotic_caste_system
+			NOT = { has_country_modifier = despotism_killed_locals }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 2
+			is_at_war = no
+			adm_power = 250
+			mil_power = 250
+		}
+		effect = {
+			add_adm_power = -250
+			add_mil_power = -250
+			add_stability = -3
+			add_country_modifier = {
+				name = despotism_killed_locals
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = particularist_rebels
+					size = 1
+				}
+			}
+		}
+	}
+	
+	#change to despotism
+	declare_despotism = {
+		major = yes
+		potential = {
+			has_country_modifier = despotism_killed_locals
+			is_tribal = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 3
+			is_at_war = no
+			adm_power = 400
+			mil_power = 400
+		}
+		effect = {
+			add_stability = -4
+			change_government = despotic_monarchy
+			add_adm_power = -400
+			add_mil_power = -400
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			custom_tooltip = declare_despotism_tooltip
+			hidden_effect = {
+				remove_country_modifier = tribal_cash_economy
+				remove_country_modifier = standardized_alphabet
+				remove_country_modifier = adopted_official_language
+				remove_country_modifier = permanent_capital
+				remove_country_modifier = tribal_civil_service
+				remove_country_modifier = tribal_trade_regulation
+				every_owned_province = {
+					limit = {
+						has_province_modifier = permanent_capital_province
+					}
+					remove_province_modifier = permanent_capital_province
+				}
+				clr_country_flag = despotism_route
+			}
+		}
+	}
+	
+	#feudalism: enforce serfdom
+	feudalism_tie_peasants = {
+		major = yes
+		potential = {
+			has_country_modifier = tribal_trade_regulation
+			NOT = {
+				OR = {
+					has_country_flag = feudal_route
+					has_country_flag = despotism_route
+					has_country_flag = kritarchy_route
+					has_country_flag = cult_route
+					has_country_flag = thalassocracy_route
+				}
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			adm_power = 100
+		}
+		effect = {
+			add_stability = -2
+			add_adm_power = -100
+			add_country_modifier = {
+				name = feudalism_serfdom_enforced
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 1
+				}
+			}
+			set_country_flag = feudal_route
+		}
+	}
+	
+	#feudalism: propety as jurisdiction
+	feudalism_property_as_jurisdiction = {
+		major = yes
+		potential = {
+			has_country_modifier = feudalism_serfdom_enforced
+			NOT = { has_country_modifier = feudalism_property_jurisdiction }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			adm_power = 250
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = -250
+			add_country_modifier = {
+				name = feudalism_property_jurisdiction
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 1
+				}
+			}
+		}
+	}
+	
+	#feudalism: noble privileges
+	feudalism_noble_privilege = {
+		major = yes
+		potential = {
+			has_country_modifier = feudalism_property_jurisdiction
+			NOT = { has_country_modifier = feudalism_noble_privileges_modifier }
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 1
+			is_at_war = no
+			adm_power = 350
+		}
+		effect = {
+			add_adm_power = -350
+			add_country_modifier = {
+				name = feudalism_noble_privileges_modifier
+				duration = -1
+			}
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 730
+			}
+		}
+	}
+	
+	#declare feudalism
+	declare_feudalism = {
+		major = yes
+		potential = {
+			has_country_modifier = feudalism_noble_privileges_modifier
+			is_tribal = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = centralization_modifier }
+			stability = 2
+			is_at_war = no
+			adm_power = 500
+			adm_tech = 2
+		}
+		effect = {
+			add_stability = -2
+			change_government = feudal_oligarchy
+			add_adm_power = -500
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			custom_tooltip = declare_feudalism_tooltip
+			hidden_effect = {
+				remove_country_modifier = tribal_cash_economy
+				remove_country_modifier = standardized_alphabet
+				remove_country_modifier = adopted_official_language
+				remove_country_modifier = permanent_capital
+				remove_country_modifier = tribal_civil_service
+				remove_country_modifier = tribal_trade_regulation
+				every_owned_province = {
+					limit = {
+						has_province_modifier = permanent_capital_province
+					}
+					remove_province_modifier = permanent_capital_province
+				}
+				clr_country_flag = feudal_route
+			}
+		}
+	}
+}

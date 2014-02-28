@@ -1,0 +1,28 @@
+#734 - Gangwon
+
+owner = KOR
+controller = KOR
+culture = korean
+religion = confucianism
+capital = "Wonju"
+trade_goods = naval_supplies
+hre = no
+base_tax = 4
+manpower = 2
+citysize = 21900
+add_core = KOR
+fort1 = yes
+discovered_by = chinese
+discovered_by = nomad_group
+
+1450.1.1 = { citysize = 24850 }
+1500.1.1 = { citysize = 27600 }
+1550.1.1 = { citysize = 29864 }
+1600.1.1 = { citysize = 22635 } # Great devastation as a result of the Japanese invasion
+1637.1.1 = { add_core = MNG } # Tributary of Qing China
+1644.1.1 = { add_core = MCH remove_core = MNG } # Part of the Manchu empire
+1650.1.1 = { citysize = 25270 }
+1653.1.1 = { discovered_by = NED } # Hendrick Hamel
+1700.1.1 = { citysize = 29526 }
+1750.1.1 = { citysize = 34588 }
+1800.1.1 = { citysize = 41500 }

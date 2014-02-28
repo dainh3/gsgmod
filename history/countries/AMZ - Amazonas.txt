@@ -1,0 +1,5 @@
+government = revolutionary_empire
+technology_group = western
+religion = catholic
+primary_culture = english
+capital = 748 # Grao Para

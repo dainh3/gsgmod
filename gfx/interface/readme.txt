@@ -1,0 +1,1 @@
+country_ideas_view_bg.dds and endgame.dss belong to The Tenth Idea mod (http://steamcommunity.com/sharedfiles/filedetails/?id=198661647) from the steam user Praetorian44(http://steamcommunity.com/profiles/76561198062508168), give him the credit wherever you use these.

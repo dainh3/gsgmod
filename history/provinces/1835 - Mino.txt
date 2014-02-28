@@ -1,0 +1,24 @@
+#1835 - Mino
+
+owner = JAP
+controller = JAP
+culture = japanese
+religion = shinto
+capital = "Inabayama"
+trade_goods = chinaware
+hre = no
+base_tax = 5
+manpower = 2
+citysize = 7350
+add_core = JAP
+fort1 = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+
+1561.1.1 = { add_core = ODA }
+1567.10.1 = { owner = ODA controller = ODA remove_core = JAP }
+1567.10.1 = { capital = "Gifu" } # Oda Nobunaga changed the name of city.
+1573.7.3 = { add_core = JAP owner = JAP controller = JAP remove_core = ODA }

@@ -1,0 +1,80 @@
+discover_madagascar = {
+	type = country
+	
+	category = DIP
+	
+	allow = {
+		ROOT = {
+			culture_group = malay
+			has_idea = quest_for_the_new_world
+			num_of_ports = 1
+		}
+		NOT = { madagascar = { has_discovered = ROOT } }
+		madagascar = { range = ROOT }
+	}
+	abort = {
+		OR = {
+			NOT = { num_of_ports = 1 }
+			NOT = { has_idea = quest_for_the_new_world }
+		}
+	}
+	success = {
+		madagascar = {
+			has_discovered = ROOT
+		}
+	}
+	chance = {
+		factor = 1000000
+		modifier = {
+			factor = 2
+			num_of_explorers = 1
+		}
+	}
+	effect = {
+		add_dip_power = 25
+	}
+}
+
+colonize_madagascar = {
+	type = country
+	
+	category = DIP
+	
+	allow = {
+		ROOT = {
+			culture_group = malay
+			has_idea = quest_for_the_new_world
+			num_of_ports = 1
+			num_of_colonists = 1
+		}
+		madagascar = {
+			has_discovered = ROOT
+			is_empty = yes
+		}
+		NOT = { madagascar = { owned_by = ROOT } }
+	}
+	abort = {
+		OR = {
+			NOT = { has_idea = quest_for_the_new_world }
+			NOT = { num_of_ports = 1 }
+			AND = {
+				NOT = { madagascar = { owned_by = ROOT } }
+				NOT = { madagascar = { is_empty = yes } }
+			}
+		}
+	}
+	success = {
+		madagascar = { owned_by = ROOT }
+		madagascar = { is_city = yes }
+	}
+	chance = {
+		factor = 1000000
+		modifier = {
+			factor = 2
+			dip = 4
+		}
+	}
+	effect = {
+		add_prestige = 10
+	}
+}

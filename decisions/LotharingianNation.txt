@@ -1,0 +1,64 @@
+country_decisions = {
+	lotharingian_nation = {
+		major = yes
+		potential = {
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = FRA }
+			NOT = { tag = NED }
+			NOT = { tag = GER }
+			NOT = { exists = LTH }
+			NOT = { tag = WES }		
+			NOT = { tag = LTE }
+			OR = {
+				primary_culture = wallonian
+				primary_culture = burgundian
+				primary_culture = rheinlaender
+				primary_culture = hessian
+				primary_culture = hannoverian
+				primary_culture = arpitan
+				primary_culture = piedmontese
+				culture_group = lowland
+			}
+			
+			capital_scope = { region = lotharingia }			
+		}
+		allow = {
+			has_regency = no
+			is_subject = no
+			is_at_war = no
+
+			owns = 189		# Lothringen
+			owns = 75		# Elssas
+			owns = 80		# Trier
+			owns = 85		# Koln
+			owns = 1878		# Aachen
+			is_core = 85	# Koln
+			is_core = 80	# Trier
+			is_core = 75	# Elssas
+			is_core = 189	# Lothringen
+			is_core = 1878	# Aachen		
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+
+			set_capital = 189		# Lothringen
+			add_prestige = 10
+			change_tag = LTH
+			lotharingia = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = LTH
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+	}
+}

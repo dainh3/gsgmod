@@ -1,0 +1,49 @@
+#East Karelia
+
+owner = NOV
+controller = NOV 
+capital = "Kajaani"
+culture = karelian
+religion = orthodox
+add_core = NOV
+add_core = FIN
+hre = no
+citysize = 100
+base_tax = 1
+trade_goods = fur
+manpower = 1
+discovered_by = SWE
+discovered_by = NOR
+discovered_by = DAN
+discovered_by = FIN
+discovered_by = GOT
+discovered_by = SHL
+discovered_by = SCA
+discovered_by = NOV
+discovered_by = MOS
+discovered_by = PSK
+discovered_by = RUS
+discovered_by = RYA
+discovered_by = TVE
+discovered_by = YAR
+discovered_by = PLT
+discovered_by = SMO
+discovered_by = NZH
+
+1450.1.1 = { fort1 = yes }
+1478.1.15 = {	owner = MOS controller = MOS add_core = MOS remove_core = NOV }
+1503.4.1  = {	owner = RUS controller = RUS add_core = RUS remove_core = MOS } # Muscovy becomes Russia
+1595.5.18  = { owner = SWE controller = SWE add_core = SWE remove_core = RUS  } # Treaty of Teusina
+1598.8.1   = { controller = POL } # Sigismund tries to reconquer his crown
+1599.8.16  = { controller = SWE } # Duke Karl get it back
+1700.1.1  = { citysize = 500 }
+1714.7.29  = { controller = RUS } # The Great Nordic War-Captured by Apraksin
+1721.8.30  = { controller = SWE } # The Peace of Nystad
+1742.9.15  = { controller = RUS } # The War of the Hats-Estimated date
+1743.8.7   = { controller = SWE } # The Peace of Åbo
+1750.1.1  = { citysize = 1000 }
+1808.9.14 = { controller = RUS } # The Swedish forces are defeated at the battle Oravais
+1809.9.17 = {	owner = RUS
+		add_core = RUS
+		remove_core = SWE
+	     } # Treaty of Fredrikshamn

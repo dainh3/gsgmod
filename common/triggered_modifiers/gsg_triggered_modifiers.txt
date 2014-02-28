@@ -1,0 +1,214 @@
+
+
+#trade tech cost level 1
+
+trade_percentage_level_1 = {
+	potential = {
+		merchants = 1
+	}
+	
+	trigger = {
+		trade_income_percentage = 0.2
+		NOT = { trade_income_percentage = 0.3 }
+	}
+	technology_cost = -0.01
+	idea_cost = -0.01
+}
+
+#trade tech cost level 2
+
+trade_percentage_level_2 = {
+	potential = {
+		merchants = 1
+	}
+	
+	trigger = {
+		trade_income_percentage = 0.3
+		NOT = { trade_income_percentage = 0.4 }
+	}
+	technology_cost = -0.02
+	idea_cost = -0.02
+}
+
+#trade tech cost level 3
+
+trade_percentage_level_3 = {
+	potential = {
+		merchants = 1
+	}
+	
+	trigger = {
+		trade_income_percentage = 0.4
+		NOT = { trade_income_percentage = 0.5 }
+	}
+	technology_cost = -0.03
+	idea_cost = -0.03
+}
+
+#trade tech cost level 4
+
+trade_percentage_level_4 = {
+	potential = {
+		merchants = 1
+	}
+	
+	trigger = {
+		trade_income_percentage = 0.5
+		NOT = { trade_income_percentage = 0.6 }
+	}
+	technology_cost = -0.04
+	idea_cost = -0.04
+}
+
+#trade tech cost level 5
+
+trade_percentage_level_5 = {
+	potential = {
+		merchants = 1
+	}
+	
+	trigger = {
+		trade_income_percentage = 0.6
+	}
+	technology_cost = -0.05
+	idea_cost = -0.05
+}
+
+horde_harem_1 = {
+	potential = {
+		tag = GTY
+		check_variable = { which = "khan_harem" value =  1 }
+		NOT = { check_variable = { which = "khan_harem" value =  2 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  1 }
+	}
+	heir_chance = 0.1
+}
+
+horde_harem_2 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value = 2 }
+		NOT = { check_variable = { 
+			which = "khan_harem" value = 3 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  2 }
+	}
+	heir_chance = 0.2
+}
+
+horde_harem_3 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value =  3 }
+		NOT = { check_variable = { which = "khan_harem" value =  4 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  3 }
+	}
+	heir_chance = 0.3
+}
+
+horde_harem_4 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value =  4 }
+		NOT = { check_variable = { which = "khan_harem" value =  5 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  4 }
+	}
+	heir_chance = 0.4
+}
+
+horde_harem_5 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value =  5 }
+		NOT = { check_variable = { which = "khan_harem" value =  6 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  5 }
+		
+	}
+	heir_chance = 0.5
+}
+
+horde_harem_6 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value =  6 }
+		NOT = { check_variable = { which = "khan_harem" value =  7 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  6 }
+		
+	}
+	heir_chance = 0.6
+}
+
+horde_harem_7 = {
+	potential = {
+		tag = GTY
+		
+		check_variable = { which = "khan_harem" value =  7 }
+		#NOT = { check_variable = { which = "khan_harem" value =  8 } }
+	}
+	
+	trigger = {
+		check_variable = { which = "khan_harem" value =  7 }
+		
+	}
+	heir_chance = 0.7
+}
+
+diplomat_at_war = {
+	potential = {
+		ai = no
+		is_at_war = yes
+	}
+	trigger = {
+		is_at_war = yes
+	}
+	diplomats = 1
+}
+
+skanderberg_op = {
+	potential = {
+		OR = {
+			AND = {
+				tag = ALB
+				has_ruler = "Gjergj Skanderbeg"
+			}
+			AND = {
+				tag = BYZ
+				NOT = { num_of_cities = 10 }
+			}
+		}
+	}
+	trigger = {
+		defensive_war_with = TUR
+	}
+	defensiveness = 3.0
+	discipline = 0.1
+	land_forcelimit_modifier = 3.0
+	infantry_cost = -0.5
+	infantry_power = 0.2
+	cavalry_cost = -0.5
+	cavalry_power = 0.2
+	global_regiment_recruit_speed = -0.9
+	land_maintenance_modifier = -0.9
+}
