@@ -4,6 +4,7 @@ gsgmod
 /gsg/mod has been REVAMPED and UPDATED for Conquest of Paradise! A lot of the stuff Paradox added made my colonial stuff partially redundant, but the base concept of the mod as "vanilla-plus" is still here. This mod also integrates several other mods. In all cases permission has been given by the authors. 
 
 Features:
+======
 
 Re-balanced the idea groups. Espionage is now DIP, Naval is now MIL and Aristo/Plutocratic is now ADM. These are partially because the actual benefits these give don't match up to their supposed categories in vanilla, and also because ADM ideas are underpowered compared to the value of ADM points. Also, the actual Administrative idea group has been purged of mercenary ideas and replaced with ones that reduce advisor, adm tech, and idea costs. The merc ideas have been pushed into Quantity, and Quantity itself has been buffed, thus making it an actual viable idea to pick. There are other minor changes to most ideas too, buffing and nerfing where appropriate. 
 
@@ -46,5 +47,6 @@ Empire government isn't restricted to Byzantium. Also, once you get to ADM tech 
 You can choose which side to back in a Civil War. 
 
 Planned Features
+======
 
 Ethnic conflicts in former colonial states, up to and including genocides.
