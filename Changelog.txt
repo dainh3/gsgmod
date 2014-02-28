@@ -1,0 +1,7 @@
+Changelog
+Added defines changes from 1.5 patch.
+Fixed a bunch of bugs from France Flavor mod.
+-The Dîme event no longer keeps spamming itself when denied.
+-Made sure no other event will happen twice, unless when desired.
+-(Regent) Anne is now Anne de Beaujeu, to make it different from "Anne (Regent)" (the Habsburg regent).
+-Made a couple events so France doesn't lose their current dynasty due to Queen-regents (de Valois losing to de' Medici dynasty, de Bourbon losing to von Habsburg).
