@@ -3235,6 +3235,7 @@ country_event = {
 	
 	trigger = {
 		stability = 0
+		is_year = 1820
 	}
 
 	mean_time_to_happen = {
